@@ -1,0 +1,36 @@
+/* --------------------------------------------------
+Print Style Sheet
+-------------------------------------------------- */
+
+/* 
+TODO
+- How will we handle carousel content
+- test all build modules
+*/
+
+/* Black text for crisp prints */
+body {
+	color: #000;
+}
+
+/* Hide elements we don't need printed */
+.nav-featured,
+.nav-main,
+.searchform,
+#footer {
+	display: none !important;
+}
+
+/* remove borders */
+body,
+#main-content,
+#main-content .str-content,
+#masthead,
+.cfct-module-carousel {
+	border: 0;
+}
+/* padding not necassary with no borders */
+.str-content {
+	padding: 0;
+}
+

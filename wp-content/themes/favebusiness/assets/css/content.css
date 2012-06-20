@@ -1,0 +1,312 @@
+/* --------------------------------------------------
+ * Content - Posts, Pages, Comments
+-------------------------------------------------- */
+
+/** @section Shared
+ -------------------------------------------------- */
+.entry,
+.reply {
+	margin-bottom: 30px;
+	overflow: hidden;
+	position: relative;
+}
+/**
+ * If we are using the blank template and Build is enabled for the page
+ * let overflow be visible so Hero can sit flush.
+ * We'll rely on module overflow.
+ */
+body.page-template-page-blank-php .entry-full.cfct-can-haz-build {
+	overflow: visible;
+}
+
+.entry .entry-header {
+	margin-bottom: 8px;
+}
+/**
+ * Fancy overflow styles
+ */
+.entry .entry-header .entry-title,
+.attachment .attachment-meta li.entry-title {
+	overflow: hidden;
+	-o-text-overflow: ellipsis; /* Opera */
+	text-overflow: ellipsis; /* IE6+, Safari, Konqueror, Standard? */
+}
+.entry .entry-header h2.entry-title,
+.attachment .attachment-meta li.entry-title {
+	font-size: 22px;
+	line-height: 1.2;
+	font-weight: normal;
+	margin-bottom: 4px;
+}
+.entry .entry-header h1.entry-title {
+	font-size: 24px;
+	margin-bottom: 4px;
+}
+/**
+ * Take advantage of margin collapse
+ * Keeps bottom-edge spacing consitent whether module or p, or nothing is at the bottom of content area
+ */
+.entry .entry-summary,
+.reply .reply-content,
+.entry .entry-footer,
+.reply .reply-footer {
+	margin-bottom: 8px;
+}
+.entry .entry-footer,
+.reply .reply-footer {
+	clear: both;
+}
+.entry .entry-footer,
+.entry .entry-info,
+.reply .reply-footer {
+	color: #666;
+	font-size: .9em;
+}
+.entry .entry-footer .spacer,
+.entry .entry-info .spacer,
+.reply .reply-footer .spacer {
+	color: #999;
+	padding: 0 3px;
+}
+
+/**
+ * Content styles
+ */
+.entry .entry-content blockquote,
+.reply .reply-content blockquote {
+	color: #666;
+	font: italic 15px/1.6 Georgia, "Times New Roman", serif;
+	margin-left: 8px;
+	margin-right: 8px;
+}
+.entry .entry-content blockquote cite,
+.reply .reply-content blockquote cite {
+	color: #999;
+	font: normal 13px/1.5 Helvetica, Verdana, Arial, sans-serif;
+}
+
+/**
+ * AJAX loader
+ */
+.loading {
+	text-align: center;
+	margin: 0 0 38px;
+}
+/**
+ * Uses CSS3PIE
+ * See css3pie_enqueue in functions.php
+ */
+.loading span {
+	background: #e3e3e3 url(../img/spinner.gif) no-repeat 7px center;
+	color: #999;
+	-moz-border-radius: 5px; /* FF1+ */
+	-webkit-border-radius: 5px; /* Saf3+, Chrome */
+	-khtml-border-radius: 5px; /* Konqueror */
+	border-radius: 5px; /* Standard. IE9 */
+	display: -moz-inline-box; /* FF2 */
+	display: inline-block; /* Standard. IE8+, Saf, FF3+ */
+	padding: 5px 7px 5px 27px;
+	position: relative;
+	text-shadow: #fff 0 1px 0;
+}
+.ajax-loaded .entry {
+	margin-bottom: 8px;
+}
+.ajax-loaded .close {
+	border-top: 1px dotted #ccc;
+	font-size: 10px;
+	font-weight: bold;
+	line-height: 18px;
+	margin-bottom: 38px;
+	padding-top: 14px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+/**
+ * Remove some margin from bottom of page when Build is present
+ */
+.entry-full.cfct-can-haz-build {
+	margin-bottom: 2px;
+}
+
+/** @section Blog Excerpts (Listed posts) and News Excerpts
+ -------------------------------------------------- */
+
+/**
+ * Add left-hand gutter to excerpts with small image
+ */
+.entry.has-img > .entry-summary {
+	/**
+	 * @workaround min-height Fast Hack
+	 *
+	 * IE6 doesn't support min-height, but treats elements with
+	 * height and overflow:visible as min-height.
+	 *
+	 * @affected IE5, IE6
+	 * @see http://www.dustindiaz.com/min-height-fast-hack/
+	 */
+	height: auto !important;
+	height: 90px;
+	margin-bottom: 15px;
+	min-height: 100px;
+	position: relative;
+}
+.entry.has-img .entry-summary .entry-img {
+	float: left;
+	margin: 4px 14px 0 0;
+	border: 5px solid #e3e3e3;
+	-moz-border-radius: 5px; /* FF1+ */
+	-webkit-border-radius: 5px; /* Saf3+, Chrome */
+	-khtml-border-radius: 5px; /* Konqueror */
+	border-radius: 5px; /* Standard. IE9 */
+}
+.entry.has-img .entry-summary .entry-img:hover {
+	border-color: #c4c4c4;
+}
+
+/** @section Attachments
+ -------------------------------------------------- */
+
+.attachment .attachment-meta {
+	margin-left: 0;
+	max-width: 602px;
+}
+.attachment .attachment-meta li:first-child {
+	border: 0;
+}
+.attachment .attachment-meta li {
+	border-top: 1px dotted #999;
+	margin: 0;
+	overflow: hidden;
+	clear: both;
+}
+.attachment .attachment-meta li .inside {
+	margin: 8px 0;
+	-o-text-overflow: ellipsis; /* Opera */
+	text-overflow: ellipsis; /* IE6+, Safari, Konqueror, Standard? */
+	overflow: hidden;
+}
+
+/** @section Replies (comments and pings)
+ -------------------------------------------------- */
+
+#comments {
+	margin-top: 0;
+	padding-top: 20px;
+}
+ol.reply-list {
+	margin: 26px 0;
+}
+ol.reply-list,
+ol.reply-list li {
+	list-style: none;
+}
+ol.reply-list .div-comment {
+	max-width: 560px; /* Same as inside c6-1234 */
+}
+.reply {
+	padding-left: 45px;
+}
+.reply .reply-header {
+	margin-bottom: 6px;
+}
+.reply .avatar {
+	left: 0;
+	position: absolute;
+	top: 3px;
+}
+.reply .reply-header .reply-title {
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.2;
+}
+.bypostauthor.reply .reply-header .reply-title {
+	font-weight: bold;
+}
+
+
+
+.ping {
+	background: url(../img/link.png) no-repeat 18px 1px;
+}
+.ping .reply-header .reply-title {
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 1.5;
+}
+
+/**
+ * Notifications
+ */
+.reply-list .box.style-e {
+	margin-bottom: 8px;
+}
+
+/**
+ * Comment form
+ */
+#respond {
+	margin-bottom: 26px;
+}
+
+#reply-title {
+	border-bottom: 1px dotted #999;
+	font-weight: normal;
+	line-height: 23px;
+	margin: 40px 0 15px 0;
+	padding-bottom: 3px;
+}
+#respond form p {
+	margin: 12px 42px;
+}
+#respond form p label {
+	font-size: 14px;
+	padding: 0 3px;
+}
+#respond .help {
+	color: #666;
+	font-size: 12px;
+	font-style: italic;
+}
+#respond input.type-text,
+#respond textarea {
+	border: 1px solid #999;
+	border-radius: 3px;
+	display: -moz-inline-box; /* FF2 */
+	display: inline-block; /* Standard. IE8+, Saf, FF3+ */
+	font-size: 13px;
+	padding: 2px 4px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+#respond textarea.comment {
+	display: block;
+}
+/**
+ * Comment form in reply mode
+ */
+.reply-list #respond {
+	margin-top: 0;
+	margin-left: 42px;
+}
+.reply-list #respond form p {
+	margin-left: 0;
+	margin-right: 0;
+}
+.reply-list #reply-title {
+	margin: 0;
+	padding: 0;
+	border-bottom: none;
+}
+#cancel-comment-reply-link {
+	font-size: 12px;
+	margin-left: 8px;
+}
+
+/**
+ * Comment threading
+ */
+ol.reply-list .children {
+	margin: 0 0 0 42px;
+}

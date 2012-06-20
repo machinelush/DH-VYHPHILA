@@ -1,0 +1,54 @@
+/* =hasLayout
+========================= */
+
+.cfct-clearfix,
+.cfct-module,
+.cfct-module .cfct-module-content,
+.cfct-popup-header-has-icon,
+.cfct-row-handle,
+.cfct-popup,
+.cfct-custom-theme-style-chooser,
+#cfct-build-header,
+#cfct-sortables-add-container {
+	zoom: 1;
+}
+
+/* =Inline-block imitation
+========================= */
+
+.cfct-il-item {
+	zoom: 1;
+	display:inline;
+}
+
+/* =Misc
+========================= */
+
+.cfct-popup {
+	border-color:#1b1b1b; /* rgba override */
+}
+
+#cfct-build-tabs li .cfct-icon-wp { /* All for IE6 */
+	margin-bottom:7px;
+	margin-top:8px;
+	vertical-align:middle;
+}
+.cfct-il-icon {
+	display: block;
+}
+
+/* =Advanced actions menu
+========================= */
+#cfct-edit-module-form .cfct-popup-advanced-actions .cfct-button-dark {
+	background-position: 50% -2px;
+	margin: 0;
+	padding: 0;
+	width: 22px;
+}
+.cfct-select-menu {
+	width: 403px;
+}
+.cfct-select-menu-wrapper,
+.cfct-select-menu ul li {
+	display: inline;
+}

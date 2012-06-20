@@ -1,0 +1,29 @@
+# FaveBusiness Changelog
+
+## 1.2.3
+- Updated to newest version of Carrington Build. See Carrington Build Changelog for modifications
+- Now compatible with WordPress 3.4
+
+## 1.2.2
+- Updated to newest version of Carrington Build. See Carrington Build Changelog for modifications
+
+## 1.2.1
+- Updated to newest version of Carrington Build. See Carrington Build Changelog for modifications
+- Fixed minor CSS issues
+
+## 1.2
+
+- Carrington Business is now FaveBusiness
+- Now compatible with and requires WordPress 3.3
+- Updated to newest version of Carrington Build (1.2)
+- Updated to newest version of Carrington Core (3.3)
+- CSS updates and loading performance improvements
+
+## 1.1.2
+
+- Updated to newest version of Carrington Build. See Carrington Build Changelog for modifications
+
+## 1.1.1
+- fix issue with menu items showing behind the carousel image.
+- fix issue with backend UI showing Automatic Update available when the most recent version of Carrington Business is installed.
+- fix inadvertent text links shown in carousel module in Safari 5 (previous/next and on radio buttons)

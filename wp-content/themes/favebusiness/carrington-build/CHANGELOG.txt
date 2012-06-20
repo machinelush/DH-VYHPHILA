@@ -1,0 +1,202 @@
+# Carrington Build Changelog
+
+## 1.2.3
+- compatibility with WordPress 3.4
+
+## 1.2.2
+- fix issue with multi modules not loading properly
+- child modules of multi-modules now know about the parent_module_id_base, not just parent_module_id
+- fix issue with auto-detecting installed location in Windows environments
+- restore compatibility with Disqus plugin accidentally removed in 1.2.1
+
+## 1.2.1
+- fix issue with content area disappearing when visual editor is disabled.
+- fix issue with JS request 404'ing for wp-langs-en.js.
+- fix edge case where Rich Text module would fail to initialize properly, leading to data loss
+- fix for taxonomy-landing overwriting permalinks incorrectly
+
+## 1.2
+- now requires WordPress version 3.3 or better
+- change css classes to use the new grid system
+- add the taxonomy-landing plugin to allow Buildable taxonomy landing pages.
+- fix various issues adding, resetting, and viewing modules with WP_DEBUG enabled
+- fix caching of parent page list in subpage module
+- add filters for row classes (cfct-build-row-{rowclass}-classes, such as cfct-build-row-cfct-row-abc-classes)
+- add automatic row classes based on modules in the row (example: cfct-inrow-loop-subpages for a subpage list module)
+- remove use of deprecated function in author dropdown list
+- remove deprecated hooks named with an underscore (cfct_*) in favor of cfct-*
+- improve compatibility with Disqus plugin
+
+## 1.1.2
+- fix a very rare condition where the default image selector tab may not display in the post-callout & callout modules
+- fix internationalization method call in post-callout module
+- changed initialization of module translation table callback registrations to run later
+- updated loop module translation callbacks to "upgrade" older data before doing data translations
+	- this creates an edge case that we'll have to accept where deployed posts with old loop module data can appear different between servers
+- added more generic filters on module output to complement the module specific output filters
+- fix carousel module for weirdness in IE8
+- fix condition where module could not be found when editing older saved widget module data in the admin
+- switch carousel module to use `esc_textarea` instead of `htmlspecialchars` in the module admin
+- removed objects being passed by reference in carousel module as Build only support PHP5 and don't need the backward compatibility
+- loading textdomain for 'carrington-build' and adding languages folder to support future internationalizations
+- removed "stacked" multi-row from default row set. Row can be reactivated by uncommenting the registration function call at the bottom of the row file
+- catching condition in post-callout where the post has gone missing
+
+## 1.1.1
+- fix issue with reset of global post data after loop module run
+- fix issue with loop module data upgrade routine to not assume the presence of filterable data all the time
+- proper backward compatibility for various deprecated filters
+- revert behavior of loop module pagination link to 1.0 behavior to allow for relative urls
+- updated behavior of carousel module search to properly allow for keyboard selection of search results
+- updated behavior of carousel module search to handle the esc. key and disallow event propagation while the search field has focus
+- fix issue with widget loading and pre-1.1 widget data
+
+## 1.1
+- fix for bug in IE6 causing rows to be cropped. Caused by mis-placed min-height fast-hack in conjunction with overflow:hidden.
+- fix custom view loading
+- pass permalink to the view in post-callout module
+- pass data to view filter
+- change some verbiage in the admin
+- moving build to run at `the_content` [10] to avoid texturization & autop
+- made consistency changes on filters to use dashes instead of underscores
+- made change to how modules are loaded to only require the classname during registration
+	- provided legacy id member support to module & row loading so legacy modules & rows can be used without a postmeta update
+	- provided data upgrade mechanism update to handle new row/module ids, filterable to handle custom rows & modules for those that want to update legacy data (not required)
+- updated filter names for consistency - all names are built with dashes instead of underscores
+- added debug meta box to post/page edit screen when `CFCT_DEBUG` is active
+- updated revision creation behavior
+	- save post does not create a double revision
+	- changing active-state does create a revision
+- added support for versioning build content
+- moved `in_ajax` check to accommodate XML-RPC transactions
+- fix placeholder text in image searches
+- added fix to allow admin-js scripts to be loaded properly on WP.com/VIP
+- added carousel module
+	- adds new jquery.cycle and o-typeahead js functionality
+- fix to shortcode module compatibility with shortcodes that are class members
+- fix available shortcodes display in shortcode module admin
+- TinyMCE fixes for forward compatibility
+- TinyMCE fixes for multiple language compatibility
+- revised location sniffing for better loading from child-themes
+- added non-destructive tab switch: switching editor tabs in the admin no longer destroys build data
+- switch to using build in function for image intermediate sizes when choosing images
+- fixes issue where module-options could not display in module admin
+- callout module & post-callout module now have filterable support for content & formatting items
+- added registration of supplied script libraries for easy re-use
+- moved o-type-ahead out of the carousel module and in to the core js
+- fixes issue where double assignment of image selection actions could break functionality
+- update module admin_form() call to pass in `post_id` 'cause its, ya know, kinda helpful
+- added multi-module support: extend the cfct_module_multi_base to create a module that supports adding multiple modules to it
+- cleaned up module reorder routine to be more selective in what data it updates
+- reduced javascript overhead by moving assigned click handlers to live listeners
+- added `add-module` & `remove-module` triggers to blocks so that listeners can be added for changes to specific blocks
+- added `module_id_base` & `module_type` to data for availability during module `update()` method
+- added `module_exists` & `module_used` methods to common build object base for sniffing available and used modules
+- Full Size is now an option for use in the image module and related modules that allow image selection
+- Image module uses abstracted image size selector
+- Image selectors now use less confusing "no image" selection option
+- Image size selectors now show the image size as well as name
+- Handle requests from "logged out" users more gracefully
+- Loop module enhancements
+	- added ability to filter on multiple post types
+	- added ability to filter on multiple taxonomies
+	- updated type ahead search on non-hierarchical terms to handle multiple comma-separated terms
+	- added upgrade routine to help use old data without having to resave all old loop modules
+	- added "offset" parameter
+	- added & registered jQuery based columnization script
+- Register all included JS libraries so that duplicates don't need to be included in themes/plugins
+- added `get_post_id()` method for modules to easily sniff the parent post ID
+- added shortened data accessor methods to modules
+	- `gfn($name)` alias of `get_field_name()`
+	- `gfi($name)` alias of `get_field_id()`
+	- `get_data($field_name, $data, $default_value)` for retrieving data from the data array
+		- @see classes/module.class.php::348 for usage details
+- added Carrington Framework template choosing compatability for modules that implement cfct_excerpt and/or cfct_content functions
+	- sets cfct_context to 'module'
+	- only loads matching module-{module_id_base}.php files
+- CF Deploy compatability mods
+	- added extra methods for modules that store relative IDs
+		- `get_referenced_ids()` & `merge_referenced_ids()`
+		- adds compatability for cf-deploy content transfer process to update ids to the new local environment
+	- added deploy bridge in lib/ to enable translation of `post_ids` when content is deployed to new server 
+- added filter state caching to preserve filter stack on parent post when modules trigger `the_content` and `the_excerpt` filters
+- fixed issue where IE could clear the contents of the module-chooser and break the admin
+- modify all row output methods to not attempt to display malformed module data
+- modify all row output methods to not display "no module" modules if a module class cannot be found for the data
+- fix yet another bug where IE 7 insistend on returning more than what an attribute contains
+- fixes issue where legacy registered modules can be missed by `module_exists` checks
+- including revision manager plugin to enable build data to participate in WordPress revision history save & restore
+
+## 1.0.1
+- fixed display of slashes in module text in admin build screen
+- fixed post callout module to utilize admin-ajax.php actions
+- added ability to override the admin enqueing of scripts by defining a function `cfct_build_admin_scripts`. (Necessary for VIP compatibility)
+- fixed issue with initialization of improperly defined or incomplete widgets
+- removed requirement that widgets have descriptions to be valid for inclusion
+
+## 1.0
+- modified moduleLoadCallbacks to accept multiple callbacks per module
+- added module-utility-class base class for modules to provide easy access to complex functionality. Including, but not limited to:
+	- post & global image search and selection
+	- in module tabs
+	- post-layout controls
+- added ability to filter module and row JS and CSS output
+- Added more default modules
+	- Loop & loop-subpages
+	- Callout & post-callout
+	- Divider
+	- Header
+	- Image, hero & gallery
+	- Notice
+	- Shortcode
+- Changing to role-based instead of integer-based user-level for readme submenu
+- added support for limiting build admin access by post type
+- Security enhancements including the application of KSES as per the user `unfiltered_html` privilege
+- Added support for non-module based js & css filtering
+- Added filterable file based module views
+- Moved placeholders.js in to admin JS core
+- Fixed IE related bugs (too many to list)
+- Added method of logging module load locations for modules to more easily reference their own location
+- Added support for limiting build admin display by post-type
+- Safeguarding against double serialized data resulting from WordPress data import routine
+
+## 0.8.7
+- Modified module loading to facilitate easier urls for modules down the road.
+- Adding pre-defined classes for basic image, header and text styles.
+- Changed load order of modules to be alphabetical based on module directory name.
+	- allows for predictable module load order based on file system layout (different file systems don't necessarily return alphabetical order).
+
+## 0.8.6
+- Changed `WP_THEME_URL` constant in `cfct_build_url()` to `get_template_directory_uri()`. `WP_THEME_URL` is not defined in WP 2.9+.
+
+## 0.8.5
+- added filter on text gathering
+- fixed json bug with UTF8 entities
+
+## 0.8.4
+- change js behavior to not prompt user when deleting an empty row
+
+## 0.8.3
+- update description of plain text module
+- add focus to plain text & html modules on module edit lightbox display
+- apply htmlentities to plain text module admin form
+
+## 0.8.2
+- include a default module that loads in object style widgets as individual modules
+- modify "legacy" widget handling to disable form save when an old style widget has to be loaded via a sidebar
+- reenabled the content filters so when the_content runs after the_excerpt we don't lose build data
+
+## 0.8.1
+- fix a bug with module reordering across blocks
+- black out content area while saves are in progress
+- revert module order to pre-save state in the event of a save error
+
+## 0.8
+- allow dragging modules between blocks and rows
+- fix for Carrington Build not honoring post-password requirements
+- various minor bug fixes
+
+## 0.5
+- added custom module options base framework
+- added Custom Class module option as a standard CB module option
+- various UI Improvements

@@ -1,0 +1,557 @@
+/* --------------------------------------------------
+ * Main Theme Structure
+ * Includes base colors to start with so everything is visible
+-------------------------------------------------- */
+html {
+	background: #494949;
+	height: 100%;
+}
+
+body {
+	border-top: 4px solid #494949;
+	background-color: #f2f2f2;
+}
+
+a {
+	color: #006699;
+	text-decoration: none;
+}
+a:hover {
+	color: #000033;
+	text-decoration: underline;
+}
+a:visited {
+	color: #003366;
+}
+
+/* Container to set page width */
+.str-container {
+	margin: 0 auto;
+	width: 992px;
+}
+
+/* Content wrapper */
+.str-content {
+	border-width: 1px;
+	border-style: solid;
+	/* Prevent overflow issues */
+	overflow: hidden;
+	padding: 15px;
+}
+
+/* Large Outer Border */
+#main-content,
+#footer-content { 
+	border-style: solid;
+	border-width: 6px;
+}
+#main-content {
+	border-color: #e3e3e3;
+	border-bottom: 0;
+	overflow: hidden;
+}
+#footer-content {
+	border-color: #595959;
+	border-top: 0;
+}
+
+/* Inner Border */
+#main-content .str-content {
+	border-color: #ccc;
+	border-width: 1px;
+	border-style: solid;
+}
+nav.nav-secondary, 
+#main-content .str-content {
+	border-bottom: 0;
+}
+#footer-content .str-content {
+	border-color: #595959;
+	border-top: 0;
+}
+
+/* Border Radius */
+/**
+ * Uses CSS3PIE
+ * See css3pie_enqueue in functions.php
+ */
+#masthead {
+	-moz-border-radius-topleft: 7px; /* FF1+ */
+	-webkit-border-top-left-radius: 7px; /* Saf3+, Chrome */
+	-khtml-border-top-left-radius: 7px; /* Konqueror */
+	-moz-border-radius-topright: 7px; /* FF1+ */
+	-webkit-border-top-right-radius: 7px; /* Saf3+, Chrome */
+	-khtml-border-top-right-radius: 7px; /* Konqueror */
+	border-radius: 7px 7px 0 0; /* Standard. IE9, PIE */
+}
+/**
+ * Uses CSS3PIE
+ * See css3pie_enqueue in functions.php
+ */
+#footer-content {
+	-moz-border-radius-bottomleft: 12px; /* FF1+ */
+	-webkit-border-bottom-left-radius: 12px; /* Saf3+, Chrome */
+	-khtml-border-bottom-left-radius: 12px; /* Konqueror */
+	-moz-border-radius-bottomright: 12px; /* FF1+ */
+	-webkit-border-bottom-right-radius: 12px; /* Saf3+, Chrome */
+	-khtml-border-bottom-right-radius: 12px; /* Konqueror */
+	border-radius: 0 0 12px 12px; /* Standard. IE9, PIE */
+	/**
+	 * CSS3PIE z-index fix
+	 * @see "Problems with z-index" http://css3pie.com/documentation/known-issues/
+	 */
+	position: relative;
+	z-index: 1;
+}
+#footer-content .str-content {
+	-moz-border-radius-bottomleft: 7px; /* FF1+ */
+	-webkit-border-bottom-left-radius: 7px; /* Saf3+, Chrome */
+	-khtml-border-bottom-left-radius: 7px; /* Konqueror */
+	-moz-border-radius-bottomright: 7px; /* FF1+ */
+	-webkit-border-bottom-right-radius: 7px; /* Saf3+, Chrome */
+	-khtml-border-bottom-right-radius: 7px; /* Konqueror */
+	border-radius: 0 0 7px 7px; /* Standard. IE9, PIE */
+}
+
+/* Header */
+#header {
+	margin: 26px 0 14px;
+	position: relative;
+	/**
+	 * @workaround IE7 z-index implementation
+	 * IE only treats z-index of siblings properly.
+	 * Set z-index here to make sure dropdown menus show up.
+	 */
+	z-index: 2;
+}
+#header .str-container {
+	position: relative;
+}
+#header .site-title {
+	font-size: 32px;
+	letter-spacing: -1px;
+	line-height: 1.2;
+	margin: 0 0 12px 7px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 1);
+	
+	/**
+	 * Prevent overlap with search box
+	 * Prevent overflow issues
+	 */
+	overflow: hidden;
+	-o-text-overflow: ellipsis; /* Opera */
+	text-overflow: ellipsis; /* IE6+, Safari, Konqueror, Standard? */
+	width: 730px;
+}
+#header .site-title a {
+	color: #3f3f3f;
+	text-decoration: none;
+}
+#header .site-title a:hover {
+	color: #000033;
+}
+
+/**
+ * @subsection Navigation menus
+ * nav.nav is self-clearing. Lists within are turned to horizontal menus.
+ */
+nav.nav {
+	display: block;
+	zoom:1;
+}
+nav.nav:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+nav.nav ul,
+nav.nav li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+nav.nav a {
+	color: #7e7d7e;
+	display: block;
+	-o-text-overflow: ellipsis; /* Opera */
+	text-overflow: ellipsis; /* IE6+, Safari, Konqueror, Standard? */
+	overflow: hidden;
+	white-space: nowrap;
+	text-decoration: none;
+}
+nav.nav a:hover {
+	color: #006699;
+}
+nav.nav li {
+	float: left;
+}
+nav.nav li ul a {
+	padding: 3px 16px 3px 14px;
+}
+
+/**
+ * Generic Dropdown menus
+ * Uses CSS3PIE
+ * See css3pie_enqueue in functions.php
+ */
+nav.nav li {
+	position: relative;
+}
+/**
+ * Uses lte-ie7.css
+ * IE doesn't take kindly to dropdowns without fixed widths. We'll fix it for IE.
+ */
+nav.nav li ul {
+	background-color: #F5F5F5;
+	border: 1px solid #006699;
+	-moz-border-radius: 4px; /* FF1+ */
+	-webkit-border-radius: 4px; /* Saf3+, Chrome */
+	-khtml-border-radius: 4px; /* Konqueror */
+	-moz-border-radius-topleft: 0; /* FF1+ */
+	-webkit-border-top-left-radius: 0; /* Saf3+, Chrome */
+	-khtml-border-top-left-radius: 0; /* Konqueror */
+	border-radius: 0 4px 4px 4px; /* Standard. IE9 */
+	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .1); /* FF3.5+ */
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .1); /* Saf3+, Chrome */
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .1); /* Standard. Opera 10.5, IE9 */
+	font-size: 13px;
+	left: -32000px;
+	line-height: 1.2;
+	min-width: 100%;
+	max-width: 400px;
+	padding: 7px 0;
+	position: absolute;
+	z-index: 99;
+}
+nav.nav li:hover ul {
+	left: auto;
+}
+nav.nav li ul li {
+	display: block;
+	float: none;
+	margin: 0;
+	padding: 0 0;
+}
+
+nav.nav-main,
+nav.nav-featured {
+	font-size: 15px;
+	line-height: 20px;
+}
+nav.nav-main > ul > li > a,
+nav.nav-featured > ul > li > a {
+	padding: 2px 7px;
+}
+/**
+ * Does not use PIE (avoid :hover issues)
+ */
+nav.nav-main ul li.has-ul a,
+nav.nav-featured ul li.has-ul a {
+	-moz-border-radius-topright: 4px; /* FF1+ */
+	-webkit-border-top-right-radius: 4px; /* Saf3+, Chrome */
+	-khtml-border-top-right-radius: 4px; /* Konqueror */
+	-moz-border-radius-topleft: 4px; /* FF1+ */
+	-webkit-border-top-left-radius: 4px; /* Saf3+, Chrome */
+	-khtml-border-top-left-radius: 4px; /* Konqueror */
+	border-radius: 4px 4px 0 0; /* Standard. IE9, PIE */
+}
+nav.nav-main > ul > li.has-ul:hover > a,
+nav.nav-featured > ul > li.has-ul:hover > a {
+	background-color: #006699;
+	color: #fff;
+}
+nav.nav-main li {
+	margin-right: 6px;
+}
+nav.nav-main > ul > li {
+	max-width: 30%;
+}
+
+nav.nav-featured {
+	float: right;
+}
+nav.nav-featured li {
+	margin-left: 6px;
+}
+/* search form */
+#header .searchform {
+	position: absolute;
+	right: 7px;
+	top: 10px;
+}
+/**
+ * Uses CSS3PIE
+ * See css3pie_enqueue in functions.php
+ */
+#header .searchform label {
+	color: #b4b4b4;
+	font-size: 10px;
+	font-weight: bold;
+	line-height: 22px;
+	text-transform: uppercase;
+}
+/**
+ * Uses lte-ie7.css for inline-block fix
+ */
+#header .searchform div {
+	background: #fafafa;
+	border: 1px solid #999;
+	border-radius: 4px;
+	display: -moz-inline-box; /* FF2 */
+	display: inline-block; /* Standard. IE8+, Saf, FF3+ */
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	margin-left: 4px;
+	padding: 0 1px;
+	vertical-align: middle;
+}
+#header .searchform .s {
+	background: transparent;
+	border: 0;
+	font-size: 12px;
+	float: left;
+	height: 18px;
+	padding: 1px 3px;
+	width: 150px;
+}
+#header .searchform .searchsubmit {
+	background: url(../img/search-icon.png) 0 0 no-repeat;
+	border: 0;
+	cursor: pointer;
+	display: -moz-inline-box; /* FF2 */
+	display: inline-block; /* Standard. IE8+, Saf, FF3+ */
+	font-size: 0;
+	line-height: 0;
+	height: 19px;
+	outline: none;
+	overflow: hidden;
+	padding: 0;
+	vertical-align: top;
+	text-indent: -32000px;
+	width: 19px;
+}
+#header .searchform .searchsubmit:hover {
+	background-position: bottom left;
+}
+
+/* Masthead */
+#masthead {
+	background: #ccc;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#e3e3e3));
+	background: -moz-linear-gradient(top,  #f2f2f2,  #e3e3e3);
+	-pie-background: linear-gradient(#f2f2f2, #e3e3e3);
+	/* Visually "move" page top padding below #masthead */
+	bottom: 30px;
+	border-bottom: 1px solid #494949;
+	/* Pull left (it's inside of str-container, but we need it flush left) */
+	margin-left: -15px;
+	overflow: hidden;
+	padding: 15px;
+	position: relative;
+	/* Set width to work with negative margins */
+	width: 948px;
+}
+#masthead h1 {
+	font-size: 38px;
+	margin: 0;
+	max-width: 100%;
+	overflow: hidden;
+	padding: 10px 15px;
+	text-shadow: #fff 0 1px 1px;
+	-o-text-overflow: ellipsis; /* Opera */
+	text-overflow: ellipsis; /* IE6+, Safari, Konqueror, Standard? */
+}
+/**
+ * Used for search page
+ */
+#masthead h1.page-title-b {
+	padding-left: 164px; /* Make room for label */
+	position: relative;
+}
+#masthead h1.page-title-b .label {
+	bottom: 18px;
+	color: #999;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: bold;
+	margin-left: -164px;
+	position: absolute;
+	text-transform: uppercase;
+	text-align: right;
+	width: 152px;
+}
+
+/* Secondary Navigation / Sub Nav */
+nav.nav-secondary {
+	background-color: #fff;
+	bottom: 30px;
+	font-size: 13px;
+	line-height: 1;
+	margin: 0;
+	padding: 0 15px;
+	position: relative;
+}
+nav.nav-secondary a:hover {
+	text-decoration: none;
+}
+nav.nav-secondary > ul > li {
+	max-width: 30%;
+}
+nav.nav-secondary li {
+	margin: 0 20px 0 0;
+}
+nav.nav-secondary a {
+	padding: 10px 0 5px;
+}
+nav.nav-secondary a:hover,
+nav.nav-secondary li:hover a {
+	border-top: 3px solid #ccc;
+	padding-top: 7px;
+}
+nav.nav-secondary a.current {
+	border-top: 3px solid #999;
+}
+/**
+ * Set back to dropdown defaults
+ */
+nav.nav-secondary li ul a,
+nav.nav-secondary li:hover li a,
+nav.nav-secondary li ul a:hover {
+	border: 0;
+	padding-top: 3px;
+}
+
+/* Main Content */
+#main-content {
+	-moz-border-radius-topleft: 12px; /* FF1+ */
+	-webkit-border-top-left-radius: 12px; /* Saf3+, Chrome */
+	-khtml-border-top-left-radius: 12px; /* Konqueror */
+	-moz-border-radius-topright: 12px; /* FF1+ */
+	-webkit-border-top-right-radius: 12px; /* Saf3+, Chrome */
+	-khtml-border-top-right-radius: 12px; /* Konqueror */
+	border-radius: 12px 12px 0 0; /* Standard. IE9, PIE */
+	position: relative;
+}
+#main-content .str-content {
+	background-color: #fff;
+	-moz-border-radius-topleft: 7px; /* FF1+ */
+	-webkit-border-top-left-radius: 7px; /* Saf3+, Chrome */
+	-khtml-border-top-left-radius: 7px; /* Konqueror */
+	-moz-border-radius-topright: 7px; /* FF1+ */
+	-webkit-border-top-right-radius: 7px; /* Saf3+, Chrome */
+	-khtml-border-top-right-radius: 7px; /* Konqueror */
+	border-radius: 7px 7px 0 0; /* Standard. IE9, PIE */
+	min-height: 400px;
+	padding-bottom: 30px;
+	padding-top: 30px;
+	/**
+	 * @workaround PIE z-index bug
+	 * @affected IE8
+	 */
+	position: relative;
+}
+#main-content .sticky {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background: #f2f2f2;
+	padding: 15px 10px 10px 10px;
+	margin-left: -10px;
+	margin-right: -10px;
+}
+
+/* Footer */
+#footer {
+	background-color: #494949;
+}
+#footer .str-content {
+	background-color: #535353;
+	border-color: #3a3a3a;
+	color: #ddd;
+}
+#footer a {
+	color: #fff;
+}
+
+/**
+ * Uses lte-ie7.css for zoom clearing fix
+ */
+#footer-sub {
+	color: #575757;
+	font-size: 10px;
+	line-height: 18px;
+	margin: 16px 10px 0px 10px;
+	overflow: hidden;
+	padding-bottom: 20px;
+	position: relative;
+}
+#footer-sub a {
+	color: #999;
+}
+nav.nav-footer {
+	line-height: 18px;
+	max-width: 100%;
+	padding-bottom: 10px;
+}
+nav.nav-footer .site-title {
+	color: #828282;
+	float: left;
+	font-size: 20px;
+	font-weight: normal;
+	line-height: 1.2;
+	margin: 0;
+	/**
+	 * Overflow protection
+	 */
+	max-width: 100%;
+	overflow: hidden;
+	-o-text-overflow: ellipsis; /* Opera */
+	text-overflow: ellipsis; /* IE6+, Safari, Konqueror, Standard? */
+	text-shadow: rgba(0, 0, 0, .3) 0 -1px 0;
+}
+#footer-sub nav.nav-footer .site-title a {
+	color: #828282;
+}
+nav.nav-footer ul {
+	float: right;
+	font-size: 11px;
+	margin: 5px 0;
+}
+nav.nav-footer li {
+	margin-left: 15px;
+}
+nav.nav-footer a {
+	color: #999;
+}
+nav.nav-footer a:hover {
+	text-decoration: underline;
+}
+#footer-sub #site-generator {
+	float: right;
+	margin: 0 0 8px 8px;
+}
+#footer-sub #site-generator a {
+	color: #575757;
+}
+/**
+ * Uses lte-ie7.cs for inline-block/text-indent workaround
+ */
+#cf-logo {
+	background: url(../img/cf-logo.png) 0 0 no-repeat;
+	border: 0;
+	cursor: pointer;
+	display: -moz-inline-box; /* FF2 */
+	display: inline-block; /* Standard. IE8+, Saf, FF3+ */
+	font-size: 0;
+	line-height: 0;
+	height: 18px;
+	margin-left: 3px;
+	margin-top: -4px;
+	outline: none;
+	overflow: hidden;
+	vertical-align: middle;
+	text-indent: -32000px;
+	width: 92px;
+}

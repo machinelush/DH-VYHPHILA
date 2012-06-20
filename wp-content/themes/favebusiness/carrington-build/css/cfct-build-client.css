@@ -1,0 +1,98 @@
+/* Client side */
+
+.cfct-build { /* Prevent overflow issues in IE */
+	overflow:hidden;
+	width:100%;
+}
+
+.cfct-block {
+	display:inline; /* Double-margin float bug innoculation */
+	float:left;
+	/**
+	 * Prevent empty left-hand columns from collapsing by giving them a min-height.
+	 * Does not require min-height fast-hack because IE < 7 does not collapse empty elements
+	 */
+	min-height: 1px;
+	overflow: hidden; /* Overflow-proofing */
+}
+
+.cfct-module {
+	margin-right: 15px;
+	margin-left: 15px;
+}
+
+/* zero out left most module */
+.c6-12 .cfct-module, 
+.c6-1234 .cfct-module,
+.c4-12 .cfct-module,
+.c6-123 .cfct-module,
+.c4-1234 .cfct-module,
+.c6-123456 .cfct-module {
+	margin-left: 0;	
+}
+/* zero out right most module */
+.c6-56 .cfct-module,
+.c4-34 .cfct-module,
+.c6-456 .cfct-module,
+.c6-3456 .cfct-module,
+.c4-1234 .cfct-module,
+.c6-123456 .cfct-module {
+	margin-right: 0;
+}
+
+/* Thirds */
+.c6-12, .c6-23, .c6-34, .c6-45, .c6-56 {
+	width: 33.3%;
+}
+/* Halves */
+.c4-12,.c4-23,.c4-34,
+.c6-123,.c6-234,.c6-345,.c6-456 {
+	width: 49.999%;
+}
+/* Two-thirds */
+.c6-1234,.c6-2345,.c6-3456 {
+	width: 66.6%;
+}
+/* Full-width */
+.c6-123456,
+.c4-1234 {
+	width: 100%;
+}
+
+/** grid utilities
+ -------------------------------------------------- */
+/* Row Clearfix
+Uses variation of Nicolas Gallagher's Micro Clearfix.
+http://nicolasgallagher.com/micro-clearfix-hack/ */
+.row:before,
+.row:after {
+	content:"";
+	display:table;
+}
+.row:after {
+	clear:both;
+}
+.row {
+	/* Just in case: make sure that rows clear outside floats. */
+	clear: both;
+	/* For IE 6/7 (trigger hasLayout) */
+	zoom:1;
+}
+
+/** grid helper classes
+ -------------------------------------------------- */
+/* Set overflow:hidden to crop overflow content.
+Good for user-generated content. Use this class if you want to support IE6 -- it has issues with overflow.
+Example usage: .grid.hideoverflow. */
+.hideoverflow .c6-1, .hideoverflow .c6-2, .hideoverflow .c6-3, .hideoverflow .c6-4, .hideoverflow .c6-5, .hideoverflow .c6-6,
+.hideoverflow .c4-1, .hideoverflow .c4-2, .hideoverflow .c4-3, .hideoverflow .c4-4,
+.hideoverflow .c6-12, .hideoverflow .c6-123, .hideoverflow .c6-1234, .hideoverflow .c6-12345, .hideoverflow .c6-123456,
+.hideoverflow .c6-23, .hideoverflow .c6-234, .hideoverflow .c6-2345, .hideoverflow .c6-23456,
+.hideoverflow .c6-34, .hideoverflow .c6-345, .hideoverflow .c6-3456,
+.hideoverflow .c6-45, .hideoverflow .c6-456, .hideoverflow .c6-56,
+.hideoverflow .c4-12, .hideoverflow .c4-123, .hideoverflow .c4-1234,
+.hideoverflow .c4-23, .hideoverflow .c4-234,
+.hideoverflow .c4-34 {
+	overflow: hidden;
+}
+

@@ -1,0 +1,689 @@
+/* --------------------------------------------------
+ * Content Islands
+-------------------------------------------------- */
+
+/* Common styles */
+/**
+ * Uses lte-ie7.css for zoom clearing fix
+ */
+.cfct-module,
+.widget,
+.notice {
+	/**
+	 * 12px + 8px of bottom margin (from paragraph) = 20px of visual space
+	 * This will provide 20px of visual space for modules with no box around them.
+	 * Boxed in modules should set the bottom margin to 20px to remain consistent.
+	 */
+	margin: 0 0 12px 0;
+	overflow: hidden;
+	position: relative;
+}
+.widget .widget-title {
+	font-size: 14px;
+	line-height: 1.28571;
+	overflow: hidden;
+	-o-text-overflow: ellipsis; /* Opera */
+	text-overflow: ellipsis; /* IE6+, Safari, Konqueror, Standard? */
+}
+/**
+ * Use margin collapse to keep spacing consistent
+ */
+.cfct-module .cfct-mod-content {
+	margin-bottom: 8px;
+}
+
+/**
+ * Uses CSS3PIE
+ * See css3pie_enqueue in functions.php
+ */
+.cfct-module.style-b,
+.cfct-module.style-c,
+.cfct-module.style-d,
+.cfct-module-image img.cfct-mod-image,
+.cfct-notice,
+.cfct-pullquote {
+	-moz-border-radius: 5px; /* FF1+ */
+	-webkit-border-radius: 5px; /* Saf3+, Chrome */
+	-khtml-border-radius: 5px; /* Konqueror */
+	border-radius: 5px; /* Standard. IE9 */
+}
+.cfct-module.style-b,
+.cfct-module.style-c,
+.cfct-module.style-d,
+.cfct-module-image img.cfct-mod-image {
+	background-color: #f2f2f2;
+	border-color: #e3e3e3;
+	border-style: solid;
+}
+
+/* Style A - basic text style with no box */
+.cfct-module.style-a .cfct-mod-title {
+	margin: 0 0 5px 0;
+}
+.cfct-module.style-a .box-img {
+	float: left;
+	margin: 4px 15px 10px 0;
+}
+
+
+/* Style B - stylized box with title bar */
+.cfct-module.style-b {
+	border-width: 1px;
+	margin-bottom: 20px;
+}
+.cfct-module.style-b .cfct-mod-title {
+	background: #d8d8d8;
+	background: -webkit-gradient(linear, left top, left bottom, from(#e3e3e3), to(#cccccc));
+	background: -moz-linear-gradient(top,  #e3e3e3,  #cccccc);
+	-pie-background: linear-gradient(#e3e3e3, #cccccc);
+	border-bottom: 1px solid #999;
+	line-height: 1.2em;
+	margin: 0;
+	padding: 6px 12px 5px 12px;
+	text-shadow: #fff 0 1px 1px;
+	-moz-border-radius-topleft: 4px; /* FF1+ */
+	-webkit-border-top-left-radius: 4px; /* Saf3+, Chrome */
+	-khtml-border-top-left-radius: 4px; /* Konqueror */
+	-moz-border-radius-topright: 4px; /* FF1+ */
+	-webkit-border-top-right-radius: 4px; /* Saf3+, Chrome */
+	-khtml-border-top-right-radius: 4px; /* Konqueror */
+	border-radius: 4px 4px 0 0; /* Standard. IE9 */
+	/**
+	 * @workaround PIE z-index bug
+	 * @affected IE8
+	 */
+	position: relative;
+}
+.style-b .box-img {
+	float: left;
+	margin: 12px 15px 12px 12px;
+}
+.style-b .cfct-mod-content {
+	margin: 10px 12px;
+}
+
+/* Style C - stylized box with bold border */
+.cfct-module.style-c {
+	border-width: 5px;
+	padding: 10px 12px 2px;
+	margin-bottom: 20px;
+}
+.cfct-module.style-c .cfct-mod-title {
+	margin: 0 0 4px 0;
+}
+.cfct-module.style-c .box-img {
+	float: left;
+	margin: 3px 12px 6px 0;
+}
+
+/* Style B - stylized box with title bar */
+.cfct-module.style-d {
+	border-width: 1px;
+	margin-bottom: 20px;
+	padding: 12px 12px 40px;
+}
+.cfct-module.style-d .cfct-mod-title {
+	background-color: #dcdcdc;
+	border-top: 1px solid #999;
+	bottom: 0;
+	left: 0;
+	margin: 0;
+	padding: 6px 0 7px 0;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	-moz-border-radius-bottomleft: 4px; /* FF1+ */
+	-webkit-border-bottom-left-radius: 4px; /* Saf3+, Chrome */
+	-khtml-border-bottom-left-radius: 4px; /* Konqueror */
+	-moz-border-radius-bottomright: 4px; /* FF1+ */
+	-webkit-border-bottom-right-radius: 4px; /* Saf3+, Chrome */
+	-khtml-border-bottom-right-radius: 4px; /* Konqueror */
+	border-radius: 0 0 4px 4px; /* Standard. IE9 */
+}
+.cfct-module.style-d .box-img {
+	float: left;
+	margin: 12px;
+}
+.cfct-module.style-d .cfct-mod-content {
+	margin: 0 0 12px;
+}
+
+/* Style E - notification style box with inline heading tag */
+.notice,
+.cfct-notice {
+	background-color: #e3f0f6;
+	margin-bottom: 20px;
+	padding: 12px 14px 4px 14px;
+}
+.notice .title,
+.notice .content,
+.cfct-notice .cfct-mod-title,
+.cfct-notice .cfct-mod-content {
+	font-size: 12px;
+	line-height: 18px;
+}
+.notice .title,
+.cfct-notice .cfct-mod-title {
+	float: left;
+	margin: 0 10px 0 0;
+}
+.cfct-notice.has-img {
+	padding: 12px 14px;
+}
+.cfct-notice.has-img .box-img {
+	float: right;
+	margin-left: 12px;
+}
+.notice .content {
+	margin-bottom: 8px;
+}
+
+/* Image module - fix extra white space under image */
+.cfct-module.cfct-module-image {
+	/**
+	 * Add padding to image wrapper. Adding margin to image doesn't work because of hasLayout issues.
+	 */
+	padding-bottom: 8px;
+}
+.cfct-module.cfct-module-image img.cfct-mod-image {
+	float: left;
+	border-width: 5px;
+	margin-bottom: 0;
+	/**
+	 * CSS3PIE z-index fix
+	 * @see "Problems with z-index" http://css3pie.com/documentation/known-issues/
+	 */
+	position: relative;
+}
+
+/**
+ * Hero module
+ * Uses CSS3PIE
+ * See css3pie_enqueue in functions.php
+ */
+.cfct-module-hero,
+.page-template-page-blank-php .c4-1234 .cfct-module-carousel {
+	background: #ccc;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#e3e3e3));
+	background: -moz-linear-gradient(top,  #f2f2f2,  #e3e3e3);
+	-pie-background: linear-gradient(#f2f2f2, #e3e3e3);
+	border-bottom: 1px solid #494949;
+	bottom: 30px;
+	font-size: 1.2em;
+	line-height: 1.6em;
+	margin: 0;
+	overflow: hidden;
+	position: relative;
+}
+.cfct-module-hero a.more-link {
+	display: block;
+	height: 100%;
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	text-indent: -999em;
+	top: 0;
+	width: 100%;
+}
+.cfct-module-hero-image {
+	/**
+	 * CSS3PIE z-index fix
+	 * @see "Problems with z-index" http://css3pie.com/documentation/known-issues/
+	 */
+	position: relative;
+	z-index: 1;
+}
+.cfct-module-hero .cfct-module-hero-image .cfct-module-hero-wrap {
+	padding: 28px 30px 20px;
+}
+.cfct-module-hero .cfct-mod-title {
+	font-size: 30px;
+	font-weight: normal;
+	text-shadow: #fff 0 1px 1px;
+	-o-text-overflow: ellipsis; /* Opera */
+}
+/**
+ * Set hard widths to keep IE happy
+ */
+.c6-12 .cfct-module-hero {
+	margin-left: -30px;
+}
+.c6-34 .cfct-module-hero {
+	margin: 0 -20px;
+}
+.c6-56 .cfct-module-hero {
+	margin-left: -10px;
+}
+.c6-12 .cfct-module-hero,
+.c6-34 .cfct-module-hero,
+.c6-56 .cfct-module-hero {
+	width: 326px;
+}
+.c6-1234 .cfct-module-hero {
+	margin-left: -30px;
+}
+.c6-3456 .cfct-module-hero {
+	margin-left: -20px;
+}
+.c6-1234 .cfct-module-hero,
+.c6-3456 .cfct-module-hero {
+	width: 652px;
+}
+.c4-12 .cfct-module-hero {
+	margin-left: -30px;
+}
+.c4-34 .cfct-module-hero {
+	margin-left: -15px;
+}
+.c4-12 .cfct-module-hero,
+.c4-34 .cfct-module-hero {
+	width: 489px;
+}
+.c4-1234 .cfct-module-hero {
+	margin-left: -30px;
+	width: 978px;
+}
+/**
+ * Border-radius for hero
+ */
+.c6-12 .cfct-module-hero,
+.c6-1234 .cfct-module-hero,
+.c4-12 .cfct-module-hero,
+.c6-12 .cfct-module-hero-image,
+.c6-1234 .cfct-module-hero-image,
+.c4-12 .cfct-module-hero-image {
+	-moz-border-radius-topleft: 7px; /* FF1+ */
+	-webkit-border-top-left-radius: 7px; /* Saf3+, Chrome */
+	-khtml-border-top-left-radius: 7px; /* Konqueror */
+	border-radius: 7px 0 0 0; /* Standard. IE9, PIE */
+}
+.c6-56 .cfct-module-hero,
+.c6-3456 .cfct-module-hero,
+.c4-34 .cfct-module-hero,
+.c6-56 .cfct-module-hero-image,
+.c6-3456 .cfct-module-hero-image,
+.c4-34 .cfct-module-hero-image {
+	-moz-border-radius-topright: 7px; /* FF1+ */
+	-webkit-border-top-right-radius: 7px; /* Saf3+, Chrome */
+	-khtml-border-top-right-radius: 7px; /* Konqueror */
+	border-radius: 0 7px 0 0; /* Standard. IE9, PIE */
+}
+.c4-1234 .cfct-module-hero,
+.c4-1234 .cfct-module-hero-image {
+	-moz-border-radius-topleft: 7px; /* FF1+ */
+	-webkit-border-top-left-radius: 7px; /* Saf3+, Chrome */
+	-khtml-border-top-left-radius: 7px; /* Konqueror */
+	-moz-border-radius-topright: 7px; /* FF1+ */
+	-webkit-border-top-right-radius: 7px; /* Saf3+, Chrome */
+	-khtml-border-top-right-radius: 7px; /* Konqueror */
+	border-radius: 7px 7px 0 0; /* Standard. IE9 */
+}
+
+/**
+ * Pullquote Module
+ */
+.cfct-pullquote {
+	background: #e3e3e3;
+	margin-bottom: 20px;
+}
+.cfct-module.cfct-pullquote blockquote.cfct-mod-content {
+	margin: 14px 12px;
+}
+
+/**
+ * Loop Module
+ */
+.cfct-module-loop.style-a .cfct-mod-title,
+.cfct-module-loop.style-c .cfct-mod-title,
+.cfct-module-loop-subpages.style-a .cfct-mod-title,
+.cfct-module-loop-subpages.style-c .cfct-mod-title {
+	margin-bottom: 15px;
+	font-size: 18px;
+}
+.cfct-module-loop .cfct-mod-content .entry .entry-title,
+.cfct-module-loop-subpages .cfct-mod-content .entry .entry-title {
+	font-size: 18px;
+}
+.cfct-module-loop .cfct-mod-content .entry,
+.cfct-module-loop-subpages .cfct-mod-content .entry {
+	margin: 0 0 12px 0;
+}
+
+
+/** @section Misc Modules
+ -------------------------------------------------- */
+/**
+ * Heading/content/image styles for modules
+ */
+.cfct-module .cfct-header-small {
+	font-size: 11px;
+	font-weight: bold;
+	letter-spacing: .1em;
+	line-height: 1.2;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+.cfct-module .cfct-header-large {
+	font-size: 20px;
+}
+.cfct-module .cfct-content-small {
+	font-size: 11px;
+}
+.cfct-module .cfct-content-large {
+	font-size: 14px;
+}
+
+/**
+ * Module images
+ */
+.cfct-module img.cfct-mod-image {
+	margin-bottom: 4px;
+	display: block;
+}
+.cfct-module img.cfct-image-left {
+	float: left;
+	margin: 2px 10px 10px 0;
+}
+.cfct-module img.cfct-image-right {
+	float: right;
+	margin: 2px 0 10px 10px;
+}
+.cfct-module img.cfct-image-center {
+	margin: 0 auto 4px;
+}
+/**
+ * Spacing edge case for box style-b
+ */
+.cfct-module.style-b img.cfct-mod-image,
+.cfct-module.style-b img.cfct-image-left,
+.cfct-module.style-b img.cfct-image-right {
+	margin: 12px 12px 10px;
+}
+.cfct-module.style-b img.cfct-image-center {
+	margin: 12px auto 10px;
+}
+
+/**
+ * Divider Module
+ */
+.cfct-divider hr {
+	margin: 0 0 9px;
+}
+.cfct-divider hr.cfct-div-dotted {
+	border-top-style: dotted;
+}
+
+/** Heading Styles - Used from heading module in Carrington Build
+ -------------------------------------------------- */
+/* set font sizes */
+.cfctbiz-hd-lg-a .cfct-mod-title,
+.cfctbiz-hd-lg-b .cfct-mod-title {
+	font-size: 22px; /* same as h2 */
+}
+.cfctbiz-hd-md-a .cfct-mod-title,
+.cfctbiz-hd-md-b .cfct-mod-title {
+	font-size: 15px; /* same as h4 */
+}
+.cfctbiz-hd-sm-a .cfct-mod-title,
+.cfctbiz-hd-sm-b .cfct-mod-title {
+	font-size: 12px; /* same as h5 */
+	letter-spacing: .1em;
+	text-transform: uppercase;
+}
+/* bold headings */
+.cfctbiz-hd-lg-a .cfct-mod-title,
+.cfctbiz-hd-md-a .cfct-mod-title,
+.cfctbiz-hd-sm-a .cfct-mod-title {
+	font-weight: bold;
+}
+/* underline headings */
+.cfctbiz-hd-lg-b .cfct-mod-title,
+.cfctbiz-hd-md-b .cfct-mod-title,
+.cfctbiz-hd-sm-b .cfct-mod-title {
+	border-bottom: 1px dotted #999;
+	font-weight: normal;
+	padding-bottom: 3px;
+}
+
+/** @section Widgets
+ -------------------------------------------------- */
+
+/**
+ * Sidebar Widgets
+ */
+.widget .widget-title {
+	border-bottom: 1px dotted #999;
+	padding-bottom: 2px;
+}
+
+/**
+ * Footer box
+ */
+.widget.style-f {
+	margin: 15px 0 7px;
+}
+.widget.style-f .widget-title {
+	border: 0;
+	color: #828282;
+	font-size: 11px;
+	font-weight: bold;
+	letter-spacing: .1em;
+	margin: 0 0 8px 0;
+	padding: 0;
+	text-shadow: #333 0 -1px 1px;
+	text-transform: uppercase;
+}
+.widget.style-f a {
+	font-weight: bold;
+	text-shadow: #333 0 -1px 1px;
+}
+
+
+/** Carousel Module
+  * 
+  * Structure Reference
+  * image:		.cfct-module-carousel .carousel .carousel-inner .car-content ul li.car-entry img
+  * content:	.cfct-module-carousel .carousel .carousel-inner .car-overlay .car-overlay-inside
+  * 			.cfct-module-carousel .carousel .carousel-inner .car-overlay .car-overlay-inside .car-header
+  * 			.cfct-module-carousel .carousel .carousel-inner .car-overlay .car-overlay-inside .car-description
+  * 			.cfct-module-carousel .carousel .carousel-inner .car-overlay .car-overlay-inside .car-cta
+  * pagination:	.cfct-module-carousel .carousel .carousel-inner .car-overlay ol li a
+ -------------------------------------------------- */
+.cfct-module-carousel {
+	position: relative;
+	z-index: 1; /* fix background color and borders not showing in IE8 */
+}
+.carousel {
+	background-color: #ececec;
+	-moz-border-radius: 5px; /* FF1+ */
+	-webkit-border-radius: 5px; /* Saf3+, Chrome */
+	-khtml-border-radius: 5px; /* Konqueror */
+	border-radius: 5px; /* Standard. IE9, PIE */	
+}
+.carousel-inner {
+	padding: 8px;
+}
+.car-content {
+	border: 1px solid #999;
+	margin-bottom: 8px;
+}
+.car-content ul,
+.car-content li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.car-img {
+	display: block;
+}
+.car-content .car-entries,
+.car-content .car-entries .car-entry {
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.car-content .car-entries {
+	z-index: 1; /* fixes z-index issue with carousel */
+}
+/* wraps content */
+.car-overlay {
+	padding: 5px 0;
+}
+.car-overlay .car-title {
+	font-size: 1.4em;
+	font-weight: normal;
+	margin-bottom: 3px;
+}
+.car-description {
+	overflow: hidden;
+}
+/* pagination */
+.car-pagination {
+	margin: 6px 0 12px 0;
+	text-align: center;
+	/**
+	 * @workaround We can't use text-indent for IE text hiding when using inline-block
+	 * line-height: 0 and font-size: 0 will do the trick.
+	 * @affected ie7
+	 */
+	font-size: 0;
+	line-height: 0;
+}
+.car-overlay .car-pagination {
+	margin: 12px 0 0 0;
+}
+.car-pagination ol {
+	list-style-type: none;
+	margin: 0;
+}
+.car-pagination li,
+.car-pagination a {
+	display: -moz-inline-box; /* FF2 */
+	display: inline-block; /* Standard. IE8+, Saf, FF3+ */
+	margin: 0;
+	/**
+	 * @bugfix inline-block fix
+	 * @see http://blog.mozilla.com/webdev/2009/02/20/cross-browser-inline-block/
+	 * @valid no
+	 */
+	zoom: 1;
+	*display: inline;
+}
+.car-pagination ol li a {
+	background: url(../img/carousel-sprite.png) 0 0 no-repeat;
+	font-size: 0;
+	height: 13px;
+	line-height: 0;
+	margin: 0 8px;
+	overflow: hidden;
+	text-indent: -9999px;
+	/**
+	 * @bugfix wrong text-indent handling with inline-block
+	 * IE7 wants to indent the whole element if it's inline-block, rather than the contents.
+	 * Using a * selector hack here to target <= IE7
+	 * @affected	IE6, IE7
+	 * @valid		no
+	 */
+	*text-indent: 0;
+	width: 12px;
+}
+.car-pagination ol li a:hover {
+	background-position: 0px -100px;
+}
+.car-pagination ol li.active a {
+	background-position: 0px -50px;
+}
+/* prev/next links */
+.car-pagination .cfct-carousel-prev,
+.car-pagination .cfct-carousel-next {
+	background: url(../img/carousel-sprite.png) 0 0 no-repeat;
+	font-size: 0;
+	height: 68px;
+	line-height: 0;
+	margin-top: -34px;
+	position: absolute;
+	text-indent: -9999px;
+	/**
+	 * @bugfix wrong text-indent handling with inline-block
+	 * IE7 wants to indent the whole element if it's inline-block, rather than the contents.
+	 * Using a * selector hack here to target <= IE7
+	 * @affected	IE6, IE7
+	 * @valid		no
+	 */
+	*text-indent: 0;
+	top: 50%;
+	width: 36px;
+	z-index: 10;
+}
+.car-pagination .cfct-carousel-next {
+	background-position: right -400px;
+}
+.car-pagination .cfct-carousel-prev {
+	background-position: left -400px;
+}
+.car-pagination .cfct-carousel-next:hover {
+	background-position: right -500px;
+}
+.car-pagination .cfct-carousel-prev:hover {
+	background-position: left -500px;
+}
+.car-pagination .cfct-carousel-next {
+	right: 0;
+}
+.car-pagination .cfct-carousel-prev {
+	left: 0;
+}
+
+/* Hero Carousel - inside .cf-1234 */
+.page-template-page-blank-php .c4-1234 .cfct-module-carousel {
+	margin: 0 -30px;
+	padding: 30px;
+	-moz-border-radius-topleft: 5px; /* FF1+ */
+	-webkit-border-top-left-radius: 5px; /* Saf3+, Chrome */
+	-khtml-border-top-left-radius: 5px; /* Konqueror */
+	-moz-border-radius-topright: 5px; /* FF1+ */
+	-webkit-border-top-right-radius: 5px; /* Saf3+, Chrome */
+	-khtml-border-top-right-radius: 5px; /* Konqueror */
+	border-radius: 5px 5px 0 0; /* Standard. IE9, PIE */
+}
+.page-template-page-blank-php .c4-1234 .cfct-module-carousel .carousel {
+	background: none;
+}
+.page-template-page-blank-php .c4-1234 .cfct-module-carousel .car-content {
+	border: 5px solid #fff;
+	-moz-border-radius: 5px; /* FF1+ */
+	-webkit-border-radius: 5px; /* Saf3+, Chrome */
+	-khtml-border-radius: 5px; /* Konqueror */
+	border-radius: 5px; /* Standard. IE9, PIE */	
+	float: left;
+	margin-right: 30px;
+	width: auto;
+}
+.page-template-page-blank-php .c4-1234 .cfct-module-carousel .car-content ul {
+	float: none;
+}
+.page-template-page-blank-php .c4-1234 .cfct-module-carousel .car-overlay .car-title {
+	font-size: 1.6em;
+	margin-bottom: 10px;
+}
+.page-template-page-blank-php .c4-1234 .cfct-module-carousel .car-pagination {
+	margin: 0 0 18px 0;
+}
+.page-template-page-blank-php .c4-1234 .cfct-module-carousel .car-overlay .car-pagination {
+	text-align: left;
+	margin: 18px 0 0 0;
+}
+.page-template-page-blank-php .c4-1234 .cfct-module-carousel .car-overlay .car-pagination ol li a {
+	margin: 0 16px 0 0;
+}
+
+/* Use case for buttons covering text in 1/3 columns */
+.c6-12 .car-pagination .cfct-carousel-next,
+.c6-34 .car-pagination .cfct-carousel-next,
+.c6-56 .car-pagination .cfct-carousel-next,
+.c6-12 .car-pagination .cfct-carousel-prev,
+.c6-34 .car-pagination .cfct-carousel-prev,
+.c6-56 .car-pagination .cfct-carousel-prev {
+	top: 123px;
+}

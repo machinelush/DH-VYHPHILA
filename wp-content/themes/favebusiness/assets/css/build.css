@@ -1,0 +1,2206 @@
+/* --------------------------------------------------
+Base Style Sheet
+-------------------------------------------------- */
+
+/* Reset
+-------------------------------------------------- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+hr {
+	background: transparent;
+	border: 0;
+	font-size: 100%;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+body {
+	background-color: #fff;
+	-webkit-text-size-adjust: none; /* turns off text size for mobile safari - was inconsistent */
+}
+address,
+cite {
+	font-style: normal;
+}
+/**
+ * Set HTML5 block level elements for browsers that don't recognize.
+ */
+article,aside,canvas,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section,summary { 
+    display:block;
+}
+/**
+ * Remove dotted borders from links and buttons
+ */
+:focus,
+:active {
+	outline: 0;
+}
+/**
+ * @bugfix Remove dotted inner borders from buttons in FF
+ * @valid no
+ */
+::-moz-focus-inner {
+	border: 0;
+}
+
+th {
+	text-align: left;
+}
+
+/* Basic Elements
+-------------------------------------------------- */
+body,
+textarea {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	line-height: 1.5;
+	color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 { 
+	margin: 16px 0 8px 0;
+	line-height: 1.2;
+	color: #000;
+}
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child,
+.h1:first-child,
+.h2:first-child,
+.h3:first-child,
+.h4:first-child,
+.h5:first-child,
+.h6:first-child {
+	margin-top: 0;
+}
+
+h1,
+.h1 {
+	font-size: 30px;
+	font-weight: normal;
+	margin-top: 0;
+}
+h2,
+.h2 {
+	font-size: 22px;
+}
+h3,
+.h3 {
+	font-size: 18px;
+	line-height: 1.3;
+}
+h4,
+.h4 { 
+	font-size: 15px;
+}
+h5,
+.h5 {
+	font-size: 13px;
+	font-weight: bold;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+}
+h6,
+.h6 {
+	font-size: 13px;
+	font-weight: bold;
+}
+
+p,
+ul,
+ol,
+dl,
+blockquote,
+pre {
+	margin-bottom: 8px;
+}
+
+ul,
+ol {
+	margin-left: 2em;
+}
+li {
+	margin: 4px 0 0 0;
+}
+
+dt {
+	font-weight: bold;
+	margin-top: 0.5em;
+}
+dd {
+	padding: 0 1em;
+}
+
+label[for] {
+	cursor: pointer;
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid #ccc;
+	height: 0;
+	margin: 15px 0;
+	padding: 0;
+}/* --------------------------------------------------
+ * Standard / Utility Classes
+-------------------------------------------------- */
+
+/** @section WordPress compatibility styles
+ * Styles for these classes should be included with every theme.
+ --------------------------------------------------------------- */
+
+.alignleft,
+.alignright {
+	margin-top: 4px;
+}
+.alignleft {
+	float: left;
+	margin-right: 15px;
+	margin-bottom: 10px;
+}
+.alignright {
+	float: right;
+	margin-left: 15px;
+	margin-bottom: 10px;
+}
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/**
+ * Captioned images
+ * Caption shortcode filtered.
+ */
+.wp-caption {
+	background-color: #e3e3e3;
+	-moz-border-radius: 3px; /* FF1+ */
+	-webkit-border-radius: 3px; /* Saf3+, Chrome */
+	-khtml-border-radius: 3px; /* Konqueror */
+	border-radius: 3px; /* Standard. IE9 */
+	overflow: hidden;
+	padding: 5px;
+	position: relative;
+}
+.wp-caption img {
+	display: block;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+.wp-caption .wp-caption-text {
+	margin: 6px 2px 0 2px;
+}
+
+/**
+ * Visually hidden, but available to screenreaders
+ */
+.accessibility {
+	left: -32000px;
+	position: absolute;
+}
+
+/** @section clearing
+---------------------- */
+
+/* Clearing floats without extra markup [http: //www.positioniseverything.net/easyclearing.html] */
+.clearfix {
+	display: block;
+	zoom: 1;
+}
+.clearfix:after {
+	content: " ";
+	display: block;
+	font-size: 0;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.clear {
+	clear: both;
+	float: none;
+	height: 1px;
+}
+
+/** @section Titles
+ -------------------------------------------------- */
+.site-title {
+	font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+.section-title {
+	border-bottom: 1px dotted #999;
+	font-weight: normal;
+	margin-bottom: 12px;
+	padding-bottom: 3px;
+}
+
+/** @subsection type treatments
+-------------------------------*/
+.typ-intro {
+	font-size: 1.2em;
+	line-height: 1.6em;
+	margin-bottom: 1em;
+}
+.typ-caps {
+	font-size: 0.9em;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+.typ-quiet,
+a.typ-quiet {
+	color: #999;
+}
+
+/** @section Pagination
+ -------------------------------------------------- */
+/**
+ * Uses lte-ie7.css for zoom clearing
+ */
+.pagination,
+.pagination-content {
+	clear: both;
+	font-size: 10px;
+	font-weight: bold;
+	line-height: 18px;
+	margin: 8px 0;
+	text-transform: uppercase;
+}
+.pagination {
+	border-top: 1px dotted #ccc;
+	margin: 16px auto;
+	overflow: hidden;
+	padding-top: 14px;
+}
+.entry-footer .pagination {
+	margin-left: 120px;
+	margin-right: 120px;
+	margin-bottom: 0;
+}
+.pagination a {
+	display: -moz-inline-box; /* FF2 */
+	display: inline-block; /* Standard. IE8+, Saf, FF3+ */
+	padding: 0 3px;
+}
+.pagination a.next,
+.pagination a.prev {
+	padding: 0;
+}
+.pagination a.next {
+	float: right;
+}
+.pagination a.prev {
+	float: left;
+}
+.pagination p {
+	color: #999;
+	margin: 0;
+	text-align: center;
+}
+.pagination-content {
+	
+}
+
+/**
+ * @section Buttons
+ * <a class="btn"> or <input class="btn">
+ -------------------------------------------------- */
+.btn,
+input#submit {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	cursor:pointer;
+	display: -moz-inline-box;
+	display: inline-block;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: normal;
+	outline: none;
+	padding: 5px 16px;
+	text-decoration: none !important;
+	vertical-align: middle;
+}
+/* button style a */
+.btn-a {
+	color: #006699;
+	background: #d8d8d8;
+	background: -webkit-gradient(linear, left top, left bottom, from(#e3e3e3), to(#cccccc));
+	background: -moz-linear-gradient(top,  #e3e3e3,  #cccccc);
+	-pie-background: linear-gradient(#e3e3e3, #cccccc);
+	text-shadow: #fff 0 1px 1px;
+}
+.btn-a:hover {
+	background: #d8d8d8;
+	background: -webkit-gradient(linear, left top, left bottom, from(#dddddd), to(#cccccc));
+	background: -moz-linear-gradient(top,  #dddddd,  #cccccc);
+	-pie-background: linear-gradient(#dddddd, #cccccc);
+	border: 1px solid #003366;
+}
+.btn-a:active {
+	background: #cccccc;
+	background: -webkit-gradient(linear, left top, left bottom, from(#999999), to(#cccccc));
+	background: -moz-linear-gradient(top,  #999999,  #cccccc);
+	-pie-background: linear-gradient(#999999, #cccccc);
+}
+/* button style b */
+.btn-b,
+input#submit {
+	color: #fff !important;
+	background: #005d8e;
+	background: -webkit-gradient(linear, left top, left bottom, from(#006699), to(#00497b));
+	background: -moz-linear-gradient(top,  #006699,  #00497b);
+	-pie-background: linear-gradient(#006699, #00497b);
+	border: 1px solid #003366;
+	text-shadow: #000033 0 -1px 0;
+}
+.btn-b:hover,
+input#submit:hover {
+	color: #fff;
+	background: #005d8e;
+	background: -webkit-gradient(linear, left top, left bottom, from(#00497b), to(#003366));
+	background: -moz-linear-gradient(top,  #00497b,  #003366);
+	-pie-background: linear-gradient(#00497b, #003366);
+	border: 1px solid #000033;
+}
+.btn-b:active,
+input#submit:active {
+	background: #cccccc;
+	background: -webkit-gradient(linear, left top, left bottom, from(#001f49), to(#003366));
+	background: -moz-linear-gradient(top,  #001f49,  #003366);
+	-pie-background: linear-gradient(#001f49, #003366);
+}
+
+/**
+ * Edit links
+ */
+a.post-edit-link {
+	background: url(../img/edit.png) no-repeat 0 0;
+	display: none;
+	font-size: 0;
+	/* Line-height Workaround for IE not being able to use text-indent. */
+	line-height: 0;
+	overflow: hidden;
+	vertical-align: middle;
+	height: 20px;
+	width: 20px;
+	text-indent: -32000px;
+	z-index: 10;
+}
+/**
+ * Edit link for pages (in masthead)
+ */
+#masthead a.post-edit-link {
+	position: absolute;
+	right: 15px;
+	top: 15px;
+}
+#main-content:hover #masthead a.post-edit-link {
+	display: block;
+}
+#main-content .entry a.post-edit-link {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+#main-content .entry:hover > a.post-edit-link {
+	display: block;
+}
+
+/**
+ * Excerpt List
+ */
+.excerpt-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.excerpt-list li {
+	margin: 0 0 10px 0;
+}
+.excerpt-list .el-title {
+	margin: 0;
+}
+.excerpt-list .el-meta {
+	font-size: 11px;
+	line-height: 14px;
+	color: #999;
+	margin-top: 0;
+}
+.excerpt-list p {
+	margin: 3px 0 0 0;
+}
+
+/**
+ * Gallery 
+ */
+body #main-content .gallery {
+	margin: auto;
+}
+body #main-content .gallery .attachment-thumbnail {
+	border-color: #e3e3e3;
+	border-width: 5px;
+	border-style: solid;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+body #main-content .gallery .attachment-thumbnail:hover {
+	border-color: #c4c4c4;
+}
+body #main-content .gallery .gallery-caption {
+	color: #888;
+}
+body #main-content .content .gallery dl {
+	margin: 0;
+}
+body #main-content .content .gallery br+br {
+	display: none;
+}/* --------------------------------------------------
+ * Content Islands
+-------------------------------------------------- */
+
+/* Common styles */
+/**
+ * Uses lte-ie7.css for zoom clearing fix
+ */
+.cfct-module,
+.widget,
+.notice {
+	/**
+	 * 12px + 8px of bottom margin (from paragraph) = 20px of visual space
+	 * This will provide 20px of visual space for modules with no box around them.
+	 * Boxed in modules should set the bottom margin to 20px to remain consistent.
+	 */
+	margin: 0 0 12px 0;
+	overflow: hidden;
+	position: relative;
+}
+.widget .widget-title {
+	font-size: 14px;
+	line-height: 1.28571;
+	overflow: hidden;
+	-o-text-overflow: ellipsis; /* Opera */
+	text-overflow: ellipsis; /* IE6+, Safari, Konqueror, Standard? */
+}
+/**
+ * Use margin collapse to keep spacing consistent
+ */
+.cfct-module .cfct-mod-content {
+	margin-bottom: 8px;
+}
+
+/**
+ * Uses CSS3PIE
+ * See css3pie_enqueue in functions.php
+ */
+.cfct-module.style-b,
+.cfct-module.style-c,
+.cfct-module.style-d,
+.cfct-module-image img.cfct-mod-image,
+.cfct-notice,
+.cfct-pullquote {
+	-moz-border-radius: 5px; /* FF1+ */
+	-webkit-border-radius: 5px; /* Saf3+, Chrome */
+	-khtml-border-radius: 5px; /* Konqueror */
+	border-radius: 5px; /* Standard. IE9 */
+}
+.cfct-module.style-b,
+.cfct-module.style-c,
+.cfct-module.style-d,
+.cfct-module-image img.cfct-mod-image {
+	background-color: #f2f2f2;
+	border-color: #e3e3e3;
+	border-style: solid;
+}
+
+/* Style A - basic text style with no box */
+.cfct-module.style-a .cfct-mod-title {
+	margin: 0 0 5px 0;
+}
+.cfct-module.style-a .box-img {
+	float: left;
+	margin: 4px 15px 10px 0;
+}
+
+
+/* Style B - stylized box with title bar */
+.cfct-module.style-b {
+	border-width: 1px;
+	margin-bottom: 20px;
+}
+.cfct-module.style-b .cfct-mod-title {
+	background: #d8d8d8;
+	background: -webkit-gradient(linear, left top, left bottom, from(#e3e3e3), to(#cccccc));
+	background: -moz-linear-gradient(top,  #e3e3e3,  #cccccc);
+	-pie-background: linear-gradient(#e3e3e3, #cccccc);
+	border-bottom: 1px solid #999;
+	line-height: 1.2em;
+	margin: 0;
+	padding: 6px 12px 5px 12px;
+	text-shadow: #fff 0 1px 1px;
+	-moz-border-radius-topleft: 4px; /* FF1+ */
+	-webkit-border-top-left-radius: 4px; /* Saf3+, Chrome */
+	-khtml-border-top-left-radius: 4px; /* Konqueror */
+	-moz-border-radius-topright: 4px; /* FF1+ */
+	-webkit-border-top-right-radius: 4px; /* Saf3+, Chrome */
+	-khtml-border-top-right-radius: 4px; /* Konqueror */
+	border-radius: 4px 4px 0 0; /* Standard. IE9 */
+	/**
+	 * @workaround PIE z-index bug
+	 * @affected IE8
+	 */
+	position: relative;
+}
+.style-b .box-img {
+	float: left;
+	margin: 12px 15px 12px 12px;
+}
+.style-b .cfct-mod-content {
+	margin: 10px 12px;
+}
+
+/* Style C - stylized box with bold border */
+.cfct-module.style-c {
+	border-width: 5px;
+	padding: 10px 12px 2px;
+	margin-bottom: 20px;
+}
+.cfct-module.style-c .cfct-mod-title {
+	margin: 0 0 4px 0;
+}
+.cfct-module.style-c .box-img {
+	float: left;
+	margin: 3px 12px 6px 0;
+}
+
+/* Style B - stylized box with title bar */
+.cfct-module.style-d {
+	border-width: 1px;
+	margin-bottom: 20px;
+	padding: 12px 12px 40px;
+}
+.cfct-module.style-d .cfct-mod-title {
+	background-color: #dcdcdc;
+	border-top: 1px solid #999;
+	bottom: 0;
+	left: 0;
+	margin: 0;
+	padding: 6px 0 7px 0;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	-moz-border-radius-bottomleft: 4px; /* FF1+ */
+	-webkit-border-bottom-left-radius: 4px; /* Saf3+, Chrome */
+	-khtml-border-bottom-left-radius: 4px; /* Konqueror */
+	-moz-border-radius-bottomright: 4px; /* FF1+ */
+	-webkit-border-bottom-right-radius: 4px; /* Saf3+, Chrome */
+	-khtml-border-bottom-right-radius: 4px; /* Konqueror */
+	border-radius: 0 0 4px 4px; /* Standard. IE9 */
+}
+.cfct-module.style-d .box-img {
+	float: left;
+	margin: 12px;
+}
+.cfct-module.style-d .cfct-mod-content {
+	margin: 0 0 12px;
+}
+
+/* Style E - notification style box with inline heading tag */
+.notice,
+.cfct-notice {
+	background-color: #e3f0f6;
+	margin-bottom: 20px;
+	padding: 12px 14px 4px 14px;
+}
+.notice .title,
+.notice .content,
+.cfct-notice .cfct-mod-title,
+.cfct-notice .cfct-mod-content {
+	font-size: 12px;
+	line-height: 18px;
+}
+.notice .title,
+.cfct-notice .cfct-mod-title {
+	float: left;
+	margin: 0 10px 0 0;
+}
+.cfct-notice.has-img {
+	padding: 12px 14px;
+}
+.cfct-notice.has-img .box-img {
+	float: right;
+	margin-left: 12px;
+}
+.notice .content {
+	margin-bottom: 8px;
+}
+
+/* Image module - fix extra white space under image */
+.cfct-module.cfct-module-image {
+	/**
+	 * Add padding to image wrapper. Adding margin to image doesn't work because of hasLayout issues.
+	 */
+	padding-bottom: 8px;
+}
+.cfct-module.cfct-module-image img.cfct-mod-image {
+	float: left;
+	border-width: 5px;
+	margin-bottom: 0;
+	/**
+	 * CSS3PIE z-index fix
+	 * @see "Problems with z-index" http://css3pie.com/documentation/known-issues/
+	 */
+	position: relative;
+}
+
+/**
+ * Hero module
+ * Uses CSS3PIE
+ * See css3pie_enqueue in functions.php
+ */
+.cfct-module-hero,
+.page-template-page-blank-php .c4-1234 .cfct-module-carousel {
+	background: #ccc;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#e3e3e3));
+	background: -moz-linear-gradient(top,  #f2f2f2,  #e3e3e3);
+	-pie-background: linear-gradient(#f2f2f2, #e3e3e3);
+	border-bottom: 1px solid #494949;
+	bottom: 30px;
+	font-size: 1.2em;
+	line-height: 1.6em;
+	margin: 0;
+	overflow: hidden;
+	position: relative;
+}
+.cfct-module-hero a.more-link {
+	display: block;
+	height: 100%;
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	text-indent: -999em;
+	top: 0;
+	width: 100%;
+}
+.cfct-module-hero-image {
+	/**
+	 * CSS3PIE z-index fix
+	 * @see "Problems with z-index" http://css3pie.com/documentation/known-issues/
+	 */
+	position: relative;
+	z-index: 1;
+}
+.cfct-module-hero .cfct-module-hero-image .cfct-module-hero-wrap {
+	padding: 28px 30px 20px;
+}
+.cfct-module-hero .cfct-mod-title {
+	font-size: 30px;
+	font-weight: normal;
+	text-shadow: #fff 0 1px 1px;
+	-o-text-overflow: ellipsis; /* Opera */
+}
+/**
+ * Set hard widths to keep IE happy
+ */
+.c6-12 .cfct-module-hero {
+	margin-left: -30px;
+}
+.c6-34 .cfct-module-hero {
+	margin: 0 -20px;
+}
+.c6-56 .cfct-module-hero {
+	margin-left: -10px;
+}
+.c6-12 .cfct-module-hero,
+.c6-34 .cfct-module-hero,
+.c6-56 .cfct-module-hero {
+	width: 326px;
+}
+.c6-1234 .cfct-module-hero {
+	margin-left: -30px;
+}
+.c6-3456 .cfct-module-hero {
+	margin-left: -20px;
+}
+.c6-1234 .cfct-module-hero,
+.c6-3456 .cfct-module-hero {
+	width: 652px;
+}
+.c4-12 .cfct-module-hero {
+	margin-left: -30px;
+}
+.c4-34 .cfct-module-hero {
+	margin-left: -15px;
+}
+.c4-12 .cfct-module-hero,
+.c4-34 .cfct-module-hero {
+	width: 489px;
+}
+.c4-1234 .cfct-module-hero {
+	margin-left: -30px;
+	width: 978px;
+}
+/**
+ * Border-radius for hero
+ */
+.c6-12 .cfct-module-hero,
+.c6-1234 .cfct-module-hero,
+.c4-12 .cfct-module-hero,
+.c6-12 .cfct-module-hero-image,
+.c6-1234 .cfct-module-hero-image,
+.c4-12 .cfct-module-hero-image {
+	-moz-border-radius-topleft: 7px; /* FF1+ */
+	-webkit-border-top-left-radius: 7px; /* Saf3+, Chrome */
+	-khtml-border-top-left-radius: 7px; /* Konqueror */
+	border-radius: 7px 0 0 0; /* Standard. IE9, PIE */
+}
+.c6-56 .cfct-module-hero,
+.c6-3456 .cfct-module-hero,
+.c4-34 .cfct-module-hero,
+.c6-56 .cfct-module-hero-image,
+.c6-3456 .cfct-module-hero-image,
+.c4-34 .cfct-module-hero-image {
+	-moz-border-radius-topright: 7px; /* FF1+ */
+	-webkit-border-top-right-radius: 7px; /* Saf3+, Chrome */
+	-khtml-border-top-right-radius: 7px; /* Konqueror */
+	border-radius: 0 7px 0 0; /* Standard. IE9, PIE */
+}
+.c4-1234 .cfct-module-hero,
+.c4-1234 .cfct-module-hero-image {
+	-moz-border-radius-topleft: 7px; /* FF1+ */
+	-webkit-border-top-left-radius: 7px; /* Saf3+, Chrome */
+	-khtml-border-top-left-radius: 7px; /* Konqueror */
+	-moz-border-radius-topright: 7px; /* FF1+ */
+	-webkit-border-top-right-radius: 7px; /* Saf3+, Chrome */
+	-khtml-border-top-right-radius: 7px; /* Konqueror */
+	border-radius: 7px 7px 0 0; /* Standard. IE9 */
+}
+
+/**
+ * Pullquote Module
+ */
+.cfct-pullquote {
+	background: #e3e3e3;
+	margin-bottom: 20px;
+}
+.cfct-module.cfct-pullquote blockquote.cfct-mod-content {
+	margin: 14px 12px;
+}
+
+/**
+ * Loop Module
+ */
+.cfct-module-loop.style-a .cfct-mod-title,
+.cfct-module-loop.style-c .cfct-mod-title,
+.cfct-module-loop-subpages.style-a .cfct-mod-title,
+.cfct-module-loop-subpages.style-c .cfct-mod-title {
+	margin-bottom: 15px;
+	font-size: 18px;
+}
+.cfct-module-loop .cfct-mod-content .entry .entry-title,
+.cfct-module-loop-subpages .cfct-mod-content .entry .entry-title {
+	font-size: 18px;
+}
+.cfct-module-loop .cfct-mod-content .entry,
+.cfct-module-loop-subpages .cfct-mod-content .entry {
+	margin: 0 0 12px 0;
+}
+
+
+/** @section Misc Modules
+ -------------------------------------------------- */
+/**
+ * Heading/content/image styles for modules
+ */
+.cfct-module .cfct-header-small {
+	font-size: 11px;
+	font-weight: bold;
+	letter-spacing: .1em;
+	line-height: 1.2;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+.cfct-module .cfct-header-large {
+	font-size: 20px;
+}
+.cfct-module .cfct-content-small {
+	font-size: 11px;
+}
+.cfct-module .cfct-content-large {
+	font-size: 14px;
+}
+
+/**
+ * Module images
+ */
+.cfct-module img.cfct-mod-image {
+	margin-bottom: 4px;
+	display: block;
+}
+.cfct-module img.cfct-image-left {
+	float: left;
+	margin: 2px 10px 10px 0;
+}
+.cfct-module img.cfct-image-right {
+	float: right;
+	margin: 2px 0 10px 10px;
+}
+.cfct-module img.cfct-image-center {
+	margin: 0 auto 4px;
+}
+/**
+ * Spacing edge case for box style-b
+ */
+.cfct-module.style-b img.cfct-mod-image,
+.cfct-module.style-b img.cfct-image-left,
+.cfct-module.style-b img.cfct-image-right {
+	margin: 12px 12px 10px;
+}
+.cfct-module.style-b img.cfct-image-center {
+	margin: 12px auto 10px;
+}
+
+/**
+ * Divider Module
+ */
+.cfct-divider hr {
+	margin: 0 0 9px;
+}
+.cfct-divider hr.cfct-div-dotted {
+	border-top-style: dotted;
+}
+
+/** Heading Styles - Used from heading module in Carrington Build
+ -------------------------------------------------- */
+/* set font sizes */
+.cfctbiz-hd-lg-a .cfct-mod-title,
+.cfctbiz-hd-lg-b .cfct-mod-title {
+	font-size: 22px; /* same as h2 */
+}
+.cfctbiz-hd-md-a .cfct-mod-title,
+.cfctbiz-hd-md-b .cfct-mod-title {
+	font-size: 15px; /* same as h4 */
+}
+.cfctbiz-hd-sm-a .cfct-mod-title,
+.cfctbiz-hd-sm-b .cfct-mod-title {
+	font-size: 12px; /* same as h5 */
+	letter-spacing: .1em;
+	text-transform: uppercase;
+}
+/* bold headings */
+.cfctbiz-hd-lg-a .cfct-mod-title,
+.cfctbiz-hd-md-a .cfct-mod-title,
+.cfctbiz-hd-sm-a .cfct-mod-title {
+	font-weight: bold;
+}
+/* underline headings */
+.cfctbiz-hd-lg-b .cfct-mod-title,
+.cfctbiz-hd-md-b .cfct-mod-title,
+.cfctbiz-hd-sm-b .cfct-mod-title {
+	border-bottom: 1px dotted #999;
+	font-weight: normal;
+	padding-bottom: 3px;
+}
+
+/** @section Widgets
+ -------------------------------------------------- */
+
+/**
+ * Sidebar Widgets
+ */
+.widget .widget-title {
+	border-bottom: 1px dotted #999;
+	padding-bottom: 2px;
+}
+
+/**
+ * Footer box
+ */
+.widget.style-f {
+	margin: 15px 0 7px;
+}
+.widget.style-f .widget-title {
+	border: 0;
+	color: #828282;
+	font-size: 11px;
+	font-weight: bold;
+	letter-spacing: .1em;
+	margin: 0 0 8px 0;
+	padding: 0;
+	text-shadow: #333 0 -1px 1px;
+	text-transform: uppercase;
+}
+.widget.style-f a {
+	font-weight: bold;
+	text-shadow: #333 0 -1px 1px;
+}
+
+
+/** Carousel Module
+  * 
+  * Structure Reference
+  * image:		.cfct-module-carousel .carousel .carousel-inner .car-content ul li.car-entry img
+  * content:	.cfct-module-carousel .carousel .carousel-inner .car-overlay .car-overlay-inside
+  * 			.cfct-module-carousel .carousel .carousel-inner .car-overlay .car-overlay-inside .car-header
+  * 			.cfct-module-carousel .carousel .carousel-inner .car-overlay .car-overlay-inside .car-description
+  * 			.cfct-module-carousel .carousel .carousel-inner .car-overlay .car-overlay-inside .car-cta
+  * pagination:	.cfct-module-carousel .carousel .carousel-inner .car-overlay ol li a
+ -------------------------------------------------- */
+.cfct-module-carousel {
+	position: relative;
+	z-index: 1; /* fix background color and borders not showing in IE8 */
+}
+.carousel {
+	background-color: #ececec;
+	-moz-border-radius: 5px; /* FF1+ */
+	-webkit-border-radius: 5px; /* Saf3+, Chrome */
+	-khtml-border-radius: 5px; /* Konqueror */
+	border-radius: 5px; /* Standard. IE9, PIE */	
+}
+.carousel-inner {
+	padding: 8px;
+}
+.car-content {
+	border: 1px solid #999;
+	margin-bottom: 8px;
+}
+.car-content ul,
+.car-content li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.car-img {
+	display: block;
+}
+.car-content .car-entries,
+.car-content .car-entries .car-entry {
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.car-content .car-entries {
+	z-index: 1; /* fixes z-index issue with carousel */
+}
+/* wraps content */
+.car-overlay {
+	padding: 5px 0;
+}
+.car-overlay .car-title {
+	font-size: 1.4em;
+	font-weight: normal;
+	margin-bottom: 3px;
+}
+.car-description {
+	overflow: hidden;
+}
+/* pagination */
+.car-pagination {
+	margin: 6px 0 12px 0;
+	text-align: center;
+	/**
+	 * @workaround We can't use text-indent for IE text hiding when using inline-block
+	 * line-height: 0 and font-size: 0 will do the trick.
+	 * @affected ie7
+	 */
+	font-size: 0;
+	line-height: 0;
+}
+.car-overlay .car-pagination {
+	margin: 12px 0 0 0;
+}
+.car-pagination ol {
+	list-style-type: none;
+	margin: 0;
+}
+.car-pagination li,
+.car-pagination a {
+	display: -moz-inline-box; /* FF2 */
+	display: inline-block; /* Standard. IE8+, Saf, FF3+ */
+	margin: 0;
+	/**
+	 * @bugfix inline-block fix
+	 * @see http://blog.mozilla.com/webdev/2009/02/20/cross-browser-inline-block/
+	 * @valid no
+	 */
+	zoom: 1;
+	*display: inline;
+}
+.car-pagination ol li a {
+	background: url(../img/carousel-sprite.png) 0 0 no-repeat;
+	font-size: 0;
+	height: 13px;
+	line-height: 0;
+	margin: 0 8px;
+	overflow: hidden;
+	text-indent: -9999px;
+	/**
+	 * @bugfix wrong text-indent handling with inline-block
+	 * IE7 wants to indent the whole element if it's inline-block, rather than the contents.
+	 * Using a * selector hack here to target <= IE7
+	 * @affected	IE6, IE7
+	 * @valid		no
+	 */
+	*text-indent: 0;
+	width: 12px;
+}
+.car-pagination ol li a:hover {
+	background-position: 0px -100px;
+}
+.car-pagination ol li.active a {
+	background-position: 0px -50px;
+}
+/* prev/next links */
+.car-pagination .cfct-carousel-prev,
+.car-pagination .cfct-carousel-next {
+	background: url(../img/carousel-sprite.png) 0 0 no-repeat;
+	font-size: 0;
+	height: 68px;
+	line-height: 0;
+	margin-top: -34px;
+	position: absolute;
+	text-indent: -9999px;
+	/**
+	 * @bugfix wrong text-indent handling with inline-block
+	 * IE7 wants to indent the whole element if it's inline-block, rather than the contents.
+	 * Using a * selector hack here to target <= IE7
+	 * @affected	IE6, IE7
+	 * @valid		no
+	 */
+	*text-indent: 0;
+	top: 50%;
+	width: 36px;
+	z-index: 10;
+}
+.car-pagination .cfct-carousel-next {
+	background-position: right -400px;
+}
+.car-pagination .cfct-carousel-prev {
+	background-position: left -400px;
+}
+.car-pagination .cfct-carousel-next:hover {
+	background-position: right -500px;
+}
+.car-pagination .cfct-carousel-prev:hover {
+	background-position: left -500px;
+}
+.car-pagination .cfct-carousel-next {
+	right: 0;
+}
+.car-pagination .cfct-carousel-prev {
+	left: 0;
+}
+
+/* Hero Carousel - inside .cf-1234 */
+.page-template-page-blank-php .c4-1234 .cfct-module-carousel {
+	margin: 0 -30px;
+	padding: 30px;
+	-moz-border-radius-topleft: 5px; /* FF1+ */
+	-webkit-border-top-left-radius: 5px; /* Saf3+, Chrome */
+	-khtml-border-top-left-radius: 5px; /* Konqueror */
+	-moz-border-radius-topright: 5px; /* FF1+ */
+	-webkit-border-top-right-radius: 5px; /* Saf3+, Chrome */
+	-khtml-border-top-right-radius: 5px; /* Konqueror */
+	border-radius: 5px 5px 0 0; /* Standard. IE9, PIE */
+}
+.page-template-page-blank-php .c4-1234 .cfct-module-carousel .carousel {
+	background: none;
+}
+.page-template-page-blank-php .c4-1234 .cfct-module-carousel .car-content {
+	border: 5px solid #fff;
+	-moz-border-radius: 5px; /* FF1+ */
+	-webkit-border-radius: 5px; /* Saf3+, Chrome */
+	-khtml-border-radius: 5px; /* Konqueror */
+	border-radius: 5px; /* Standard. IE9, PIE */	
+	float: left;
+	margin-right: 30px;
+	width: auto;
+}
+.page-template-page-blank-php .c4-1234 .cfct-module-carousel .car-content ul {
+	float: none;
+}
+.page-template-page-blank-php .c4-1234 .cfct-module-carousel .car-overlay .car-title {
+	font-size: 1.6em;
+	margin-bottom: 10px;
+}
+.page-template-page-blank-php .c4-1234 .cfct-module-carousel .car-pagination {
+	margin: 0 0 18px 0;
+}
+.page-template-page-blank-php .c4-1234 .cfct-module-carousel .car-overlay .car-pagination {
+	text-align: left;
+	margin: 18px 0 0 0;
+}
+.page-template-page-blank-php .c4-1234 .cfct-module-carousel .car-overlay .car-pagination ol li a {
+	margin: 0 16px 0 0;
+}
+
+/* Use case for buttons covering text in 1/3 columns */
+.c6-12 .car-pagination .cfct-carousel-next,
+.c6-34 .car-pagination .cfct-carousel-next,
+.c6-56 .car-pagination .cfct-carousel-next,
+.c6-12 .car-pagination .cfct-carousel-prev,
+.c6-34 .car-pagination .cfct-carousel-prev,
+.c6-56 .car-pagination .cfct-carousel-prev {
+	top: 123px;
+}/* --------------------------------------------------
+ * Content - Posts, Pages, Comments
+-------------------------------------------------- */
+
+/** @section Shared
+ -------------------------------------------------- */
+.entry,
+.reply {
+	margin-bottom: 30px;
+	overflow: hidden;
+	position: relative;
+}
+/**
+ * If we are using the blank template and Build is enabled for the page
+ * let overflow be visible so Hero can sit flush.
+ * We'll rely on module overflow.
+ */
+body.page-template-page-blank-php .entry-full.cfct-can-haz-build {
+	overflow: visible;
+}
+
+.entry .entry-header {
+	margin-bottom: 8px;
+}
+/**
+ * Fancy overflow styles
+ */
+.entry .entry-header .entry-title,
+.attachment .attachment-meta li.entry-title {
+	overflow: hidden;
+	-o-text-overflow: ellipsis; /* Opera */
+	text-overflow: ellipsis; /* IE6+, Safari, Konqueror, Standard? */
+}
+.entry .entry-header h2.entry-title,
+.attachment .attachment-meta li.entry-title {
+	font-size: 22px;
+	line-height: 1.2;
+	font-weight: normal;
+	margin-bottom: 4px;
+}
+.entry .entry-header h1.entry-title {
+	font-size: 24px;
+	margin-bottom: 4px;
+}
+/**
+ * Take advantage of margin collapse
+ * Keeps bottom-edge spacing consitent whether module or p, or nothing is at the bottom of content area
+ */
+.entry .entry-summary,
+.reply .reply-content,
+.entry .entry-footer,
+.reply .reply-footer {
+	margin-bottom: 8px;
+}
+.entry .entry-footer,
+.reply .reply-footer {
+	clear: both;
+}
+.entry .entry-footer,
+.entry .entry-info,
+.reply .reply-footer {
+	color: #666;
+	font-size: .9em;
+}
+.entry .entry-footer .spacer,
+.entry .entry-info .spacer,
+.reply .reply-footer .spacer {
+	color: #999;
+	padding: 0 3px;
+}
+
+/**
+ * Content styles
+ */
+.entry .entry-content blockquote,
+.reply .reply-content blockquote {
+	color: #666;
+	font: italic 15px/1.6 Georgia, "Times New Roman", serif;
+	margin-left: 8px;
+	margin-right: 8px;
+}
+.entry .entry-content blockquote cite,
+.reply .reply-content blockquote cite {
+	color: #999;
+	font: normal 13px/1.5 Helvetica, Verdana, Arial, sans-serif;
+}
+
+/**
+ * AJAX loader
+ */
+.loading {
+	text-align: center;
+	margin: 0 0 38px;
+}
+/**
+ * Uses CSS3PIE
+ * See css3pie_enqueue in functions.php
+ */
+.loading span {
+	background: #e3e3e3 url(../img/spinner.gif) no-repeat 7px center;
+	color: #999;
+	-moz-border-radius: 5px; /* FF1+ */
+	-webkit-border-radius: 5px; /* Saf3+, Chrome */
+	-khtml-border-radius: 5px; /* Konqueror */
+	border-radius: 5px; /* Standard. IE9 */
+	display: -moz-inline-box; /* FF2 */
+	display: inline-block; /* Standard. IE8+, Saf, FF3+ */
+	padding: 5px 7px 5px 27px;
+	position: relative;
+	text-shadow: #fff 0 1px 0;
+}
+.ajax-loaded .entry {
+	margin-bottom: 8px;
+}
+.ajax-loaded .close {
+	border-top: 1px dotted #ccc;
+	font-size: 10px;
+	font-weight: bold;
+	line-height: 18px;
+	margin-bottom: 38px;
+	padding-top: 14px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+/**
+ * Remove some margin from bottom of page when Build is present
+ */
+.entry-full.cfct-can-haz-build {
+	margin-bottom: 2px;
+}
+
+/** @section Blog Excerpts (Listed posts) and News Excerpts
+ -------------------------------------------------- */
+
+/**
+ * Add left-hand gutter to excerpts with small image
+ */
+.entry.has-img > .entry-summary {
+	/**
+	 * @workaround min-height Fast Hack
+	 *
+	 * IE6 doesn't support min-height, but treats elements with
+	 * height and overflow:visible as min-height.
+	 *
+	 * @affected IE5, IE6
+	 * @see http://www.dustindiaz.com/min-height-fast-hack/
+	 */
+	height: auto !important;
+	height: 90px;
+	margin-bottom: 15px;
+	min-height: 100px;
+	position: relative;
+}
+.entry.has-img .entry-summary .entry-img {
+	float: left;
+	margin: 4px 14px 0 0;
+	border: 5px solid #e3e3e3;
+	-moz-border-radius: 5px; /* FF1+ */
+	-webkit-border-radius: 5px; /* Saf3+, Chrome */
+	-khtml-border-radius: 5px; /* Konqueror */
+	border-radius: 5px; /* Standard. IE9 */
+}
+.entry.has-img .entry-summary .entry-img:hover {
+	border-color: #c4c4c4;
+}
+
+/** @section Attachments
+ -------------------------------------------------- */
+
+.attachment .attachment-meta {
+	margin-left: 0;
+	max-width: 602px;
+}
+.attachment .attachment-meta li:first-child {
+	border: 0;
+}
+.attachment .attachment-meta li {
+	border-top: 1px dotted #999;
+	margin: 0;
+	overflow: hidden;
+	clear: both;
+}
+.attachment .attachment-meta li .inside {
+	margin: 8px 0;
+	-o-text-overflow: ellipsis; /* Opera */
+	text-overflow: ellipsis; /* IE6+, Safari, Konqueror, Standard? */
+	overflow: hidden;
+}
+
+/** @section Replies (comments and pings)
+ -------------------------------------------------- */
+
+#comments {
+	margin-top: 0;
+	padding-top: 20px;
+}
+ol.reply-list {
+	margin: 26px 0;
+}
+ol.reply-list,
+ol.reply-list li {
+	list-style: none;
+}
+ol.reply-list .div-comment {
+	max-width: 560px; /* Same as inside c6-1234 */
+}
+.reply {
+	padding-left: 45px;
+}
+.reply .reply-header {
+	margin-bottom: 6px;
+}
+.reply .avatar {
+	left: 0;
+	position: absolute;
+	top: 3px;
+}
+.reply .reply-header .reply-title {
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.2;
+}
+.bypostauthor.reply .reply-header .reply-title {
+	font-weight: bold;
+}
+
+
+
+.ping {
+	background: url(../img/link.png) no-repeat 18px 1px;
+}
+.ping .reply-header .reply-title {
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 1.5;
+}
+
+/**
+ * Notifications
+ */
+.reply-list .box.style-e {
+	margin-bottom: 8px;
+}
+
+/**
+ * Comment form
+ */
+#respond {
+	margin-bottom: 26px;
+}
+
+#reply-title {
+	border-bottom: 1px dotted #999;
+	font-weight: normal;
+	line-height: 23px;
+	margin: 40px 0 15px 0;
+	padding-bottom: 3px;
+}
+#respond form p {
+	margin: 12px 42px;
+}
+#respond form p label {
+	font-size: 14px;
+	padding: 0 3px;
+}
+#respond .help {
+	color: #666;
+	font-size: 12px;
+	font-style: italic;
+}
+#respond input.type-text,
+#respond textarea {
+	border: 1px solid #999;
+	border-radius: 3px;
+	display: -moz-inline-box; /* FF2 */
+	display: inline-block; /* Standard. IE8+, Saf, FF3+ */
+	font-size: 13px;
+	padding: 2px 4px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+#respond textarea.comment {
+	display: block;
+}
+/**
+ * Comment form in reply mode
+ */
+.reply-list #respond {
+	margin-top: 0;
+	margin-left: 42px;
+}
+.reply-list #respond form p {
+	margin-left: 0;
+	margin-right: 0;
+}
+.reply-list #reply-title {
+	margin: 0;
+	padding: 0;
+	border-bottom: none;
+}
+#cancel-comment-reply-link {
+	font-size: 12px;
+	margin-left: 8px;
+}
+
+/**
+ * Comment threading
+ */
+ol.reply-list .children {
+	margin: 0 0 0 42px;
+}/** --------------------------------------------------
+ * Grid
+ * Contains styles for grid layout
+ * Also contains style for Carrington Build
+ * -------------------------------------------------- */
+
+/* Clear rows */
+.cfct-row:before,
+.cfct-row:after {
+	content: "";
+	display: table;
+}
+.cfct-row:after {
+	clear: both;
+}
+.cfct-row {
+	zoom: 1;
+}
+
+/**
+ * Constrained single col
+ */
+.col-full {
+	margin-left: auto;
+	margin-right: auto;
+	width: 620px;
+}
+
+.c6-12, /* 1/3 */
+.c6-34,
+.c6-56,
+.c6-1234, /* 1/3 grouped */
+.c6-3456,
+.c4-1234, /* 1/1 */
+.c4-12, /* 1/2 */
+.c4-34,
+.col-f, /* 1/6 */
+.col-g,
+.col-h,
+.cfct-block /* Carrington build */
+{
+	display: inline; /* Double-margin float bug fix */
+	float: left;
+	margin: 0 15px;
+}
+
+/* Prevent empty columns from collapsing in Build.
+We don't need to worry about this in IE7 and IE6 because they don't collapse empty rows
+with overflow: hidden.
+
+We're targeting modern browsers specifically to avoid triggering hasLayout via min-height.
+This allows floated rows to wrap (since hasLayout would otherwise trigger a new layout context). */
+.modern .cfct-block,
+.ie8 .cfct-block {
+	min-height: 1px; 
+}
+
+.c6-12,
+.c6-34,
+.c6-56,
+.c6-1234 .c4-12,
+.c6-1234 .c4-34 {
+	width: 286px;
+}
+.c6-1234,
+.c6-3456 {
+	width: 602px;
+}
+.c4-1234 {
+	display: block;
+	float: none;
+}
+
+/**
+ * Make sure first columns are always on a new line
+ */
+.c6-12,
+.c6-1234,
+.c4-1234,
+.c4-12 {
+	clear: left;
+}
+
+.c4-12,
+.c4-34 {
+	width: 444px;
+}
+
+.col-f,
+.col-g, /** Middle columns. Repeat 4x, or as necessary. */
+.col-h {
+	width: 125px;
+}
+
+/**
+ * @subsection nested columns
+ */
+.c4-1234 .c6-12,
+.c4-1234 .c6-1234,
+.c4-1234 .c4-12,
+.c6-1234 .c6-12,
+.c6-3456 .c6-34,
+.c6-1234 .c6-12,
+.c6-1234 .c6-1234,
+.c6-1234 .c4-1234,
+.c6-1234 .c4-12,
+.c6-3456 .c6-12,
+.c6-3456 .c6-1234,
+.c6-3456 .c6-3456,
+.c6-3456 .c4-1234,
+.c6-3456 .c4-12,
+.c4-1234 .c6-12,
+.c4-1234 .c6-1234,
+.c4-1234 .c4-1234,
+.c4-1234 .c4-12,
+.c4-12 .col-f,
+.c4-34 .col-f {
+	margin-left: 0;
+}
+.c4-1234 .c6-56,
+.c4-1234 .c6-3456,
+.c4-1234 .c4-34,
+.c6-1234 .c6-34,
+.c6-3456 .c4-34,
+.c6-1234 .c6-56,
+.c6-1234 .c6-1234,
+.c6-1234 .c6-3456,
+.c6-1234 .c4-1234,
+.c6-3456 .c6-56,
+.c6-3456 .c6-1234,
+.c6-3456 .c6-3456,
+.c6-3456 .c4-1234,
+.c4-1234 .c6-56,
+.c4-1234 .c6-3456,
+.c4-1234 .c4-1234,
+.c4-1234 .c4-34,
+.c6-1234 .c4-34,
+.c4-12 .col-h,
+.c4-34 .col-h {
+	margin-right: 0;
+}
+
+.c4-1234 .c4-1234,
+.c6-1234 .c6-1234 {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/**
+ * Floated columns
+ */
+.cfct-block-float-a {
+	margin-right: 15px;
+}
+.cfct-row-float-a .c4-1234 .cfct-module,
+.cfct-row-float-c .c4-1234 .cfct-module {
+	overflow: visible;
+}
+.cfct-block-float-a,
+.cfct-block-float-c {
+	max-width: 286px;
+}
+.cfct-block-float-a {
+	margin: 0 30px 0 0;
+}
+.cfct-block-float-c {
+	float: right;
+	margin: 0 0 0 30px;
+}/* --------------------------------------------------
+ * Main Theme Structure
+ * Includes base colors to start with so everything is visible
+-------------------------------------------------- */
+html {
+	background: #494949;
+	height: 100%;
+}
+
+body {
+	border-top: 4px solid #494949;
+	background-color: #f2f2f2;
+}
+
+a {
+	color: #006699;
+	text-decoration: none;
+}
+a:hover {
+	color: #000033;
+	text-decoration: underline;
+}
+a:visited {
+	color: #003366;
+}
+
+/* Container to set page width */
+.str-container {
+	margin: 0 auto;
+	width: 992px;
+}
+
+/* Content wrapper */
+.str-content {
+	border-width: 1px;
+	border-style: solid;
+	/* Prevent overflow issues */
+	overflow: hidden;
+	padding: 15px;
+}
+
+/* Large Outer Border */
+#main-content,
+#footer-content { 
+	border-style: solid;
+	border-width: 6px;
+}
+#main-content {
+	border-color: #e3e3e3;
+	border-bottom: 0;
+	overflow: hidden;
+}
+#footer-content {
+	border-color: #595959;
+	border-top: 0;
+}
+
+/* Inner Border */
+#main-content .str-content {
+	border-color: #ccc;
+	border-width: 1px;
+	border-style: solid;
+}
+nav.nav-secondary, 
+#main-content .str-content {
+	border-bottom: 0;
+}
+#footer-content .str-content {
+	border-color: #595959;
+	border-top: 0;
+}
+
+/* Border Radius */
+/**
+ * Uses CSS3PIE
+ * See css3pie_enqueue in functions.php
+ */
+#masthead {
+	-moz-border-radius-topleft: 7px; /* FF1+ */
+	-webkit-border-top-left-radius: 7px; /* Saf3+, Chrome */
+	-khtml-border-top-left-radius: 7px; /* Konqueror */
+	-moz-border-radius-topright: 7px; /* FF1+ */
+	-webkit-border-top-right-radius: 7px; /* Saf3+, Chrome */
+	-khtml-border-top-right-radius: 7px; /* Konqueror */
+	border-radius: 7px 7px 0 0; /* Standard. IE9, PIE */
+}
+/**
+ * Uses CSS3PIE
+ * See css3pie_enqueue in functions.php
+ */
+#footer-content {
+	-moz-border-radius-bottomleft: 12px; /* FF1+ */
+	-webkit-border-bottom-left-radius: 12px; /* Saf3+, Chrome */
+	-khtml-border-bottom-left-radius: 12px; /* Konqueror */
+	-moz-border-radius-bottomright: 12px; /* FF1+ */
+	-webkit-border-bottom-right-radius: 12px; /* Saf3+, Chrome */
+	-khtml-border-bottom-right-radius: 12px; /* Konqueror */
+	border-radius: 0 0 12px 12px; /* Standard. IE9, PIE */
+	/**
+	 * CSS3PIE z-index fix
+	 * @see "Problems with z-index" http://css3pie.com/documentation/known-issues/
+	 */
+	position: relative;
+	z-index: 1;
+}
+#footer-content .str-content {
+	-moz-border-radius-bottomleft: 7px; /* FF1+ */
+	-webkit-border-bottom-left-radius: 7px; /* Saf3+, Chrome */
+	-khtml-border-bottom-left-radius: 7px; /* Konqueror */
+	-moz-border-radius-bottomright: 7px; /* FF1+ */
+	-webkit-border-bottom-right-radius: 7px; /* Saf3+, Chrome */
+	-khtml-border-bottom-right-radius: 7px; /* Konqueror */
+	border-radius: 0 0 7px 7px; /* Standard. IE9, PIE */
+}
+
+/* Header */
+#header {
+	margin: 26px 0 14px;
+	position: relative;
+	/**
+	 * @workaround IE7 z-index implementation
+	 * IE only treats z-index of siblings properly.
+	 * Set z-index here to make sure dropdown menus show up.
+	 */
+	z-index: 2;
+}
+#header .str-container {
+	position: relative;
+}
+#header .site-title {
+	font-size: 32px;
+	letter-spacing: -1px;
+	line-height: 1.2;
+	margin: 0 0 12px 7px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 1);
+	
+	/**
+	 * Prevent overlap with search box
+	 * Prevent overflow issues
+	 */
+	overflow: hidden;
+	-o-text-overflow: ellipsis; /* Opera */
+	text-overflow: ellipsis; /* IE6+, Safari, Konqueror, Standard? */
+	width: 730px;
+}
+#header .site-title a {
+	color: #3f3f3f;
+	text-decoration: none;
+}
+#header .site-title a:hover {
+	color: #000033;
+}
+
+/**
+ * @subsection Navigation menus
+ * nav.nav is self-clearing. Lists within are turned to horizontal menus.
+ */
+nav.nav {
+	display: block;
+	zoom:1;
+}
+nav.nav:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+nav.nav ul,
+nav.nav li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+nav.nav a {
+	color: #7e7d7e;
+	display: block;
+	-o-text-overflow: ellipsis; /* Opera */
+	text-overflow: ellipsis; /* IE6+, Safari, Konqueror, Standard? */
+	overflow: hidden;
+	white-space: nowrap;
+	text-decoration: none;
+}
+nav.nav a:hover {
+	color: #006699;
+}
+nav.nav li {
+	float: left;
+}
+nav.nav li ul a {
+	padding: 3px 16px 3px 14px;
+}
+
+/**
+ * Generic Dropdown menus
+ * Uses CSS3PIE
+ * See css3pie_enqueue in functions.php
+ */
+nav.nav li {
+	position: relative;
+}
+/**
+ * Uses lte-ie7.css
+ * IE doesn't take kindly to dropdowns without fixed widths. We'll fix it for IE.
+ */
+nav.nav li ul {
+	background-color: #F5F5F5;
+	border: 1px solid #006699;
+	-moz-border-radius: 4px; /* FF1+ */
+	-webkit-border-radius: 4px; /* Saf3+, Chrome */
+	-khtml-border-radius: 4px; /* Konqueror */
+	-moz-border-radius-topleft: 0; /* FF1+ */
+	-webkit-border-top-left-radius: 0; /* Saf3+, Chrome */
+	-khtml-border-top-left-radius: 0; /* Konqueror */
+	border-radius: 0 4px 4px 4px; /* Standard. IE9 */
+	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .1); /* FF3.5+ */
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .1); /* Saf3+, Chrome */
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .1); /* Standard. Opera 10.5, IE9 */
+	font-size: 13px;
+	left: -32000px;
+	line-height: 1.2;
+	min-width: 100%;
+	max-width: 400px;
+	padding: 7px 0;
+	position: absolute;
+	z-index: 99;
+}
+nav.nav li:hover ul {
+	left: auto;
+}
+nav.nav li ul li {
+	display: block;
+	float: none;
+	margin: 0;
+	padding: 0 0;
+}
+
+nav.nav-main,
+nav.nav-featured {
+	font-size: 15px;
+	line-height: 20px;
+}
+nav.nav-main > ul > li > a,
+nav.nav-featured > ul > li > a {
+	padding: 2px 7px;
+}
+/**
+ * Does not use PIE (avoid :hover issues)
+ */
+nav.nav-main ul li.has-ul a,
+nav.nav-featured ul li.has-ul a {
+	-moz-border-radius-topright: 4px; /* FF1+ */
+	-webkit-border-top-right-radius: 4px; /* Saf3+, Chrome */
+	-khtml-border-top-right-radius: 4px; /* Konqueror */
+	-moz-border-radius-topleft: 4px; /* FF1+ */
+	-webkit-border-top-left-radius: 4px; /* Saf3+, Chrome */
+	-khtml-border-top-left-radius: 4px; /* Konqueror */
+	border-radius: 4px 4px 0 0; /* Standard. IE9, PIE */
+}
+nav.nav-main > ul > li.has-ul:hover > a,
+nav.nav-featured > ul > li.has-ul:hover > a {
+	background-color: #006699;
+	color: #fff;
+}
+nav.nav-main li {
+	margin-right: 6px;
+}
+nav.nav-main > ul > li {
+	max-width: 30%;
+}
+
+nav.nav-featured {
+	float: right;
+}
+nav.nav-featured li {
+	margin-left: 6px;
+}
+/* search form */
+#header .searchform {
+	position: absolute;
+	right: 7px;
+	top: 10px;
+}
+/**
+ * Uses CSS3PIE
+ * See css3pie_enqueue in functions.php
+ */
+#header .searchform label {
+	color: #b4b4b4;
+	font-size: 10px;
+	font-weight: bold;
+	line-height: 22px;
+	text-transform: uppercase;
+}
+/**
+ * Uses lte-ie7.css for inline-block fix
+ */
+#header .searchform div {
+	background: #fafafa;
+	border: 1px solid #999;
+	border-radius: 4px;
+	display: -moz-inline-box; /* FF2 */
+	display: inline-block; /* Standard. IE8+, Saf, FF3+ */
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	margin-left: 4px;
+	padding: 0 1px;
+	vertical-align: middle;
+}
+#header .searchform .s {
+	background: transparent;
+	border: 0;
+	font-size: 12px;
+	float: left;
+	height: 18px;
+	padding: 1px 3px;
+	width: 150px;
+}
+#header .searchform .searchsubmit {
+	background: url(../img/search-icon.png) 0 0 no-repeat;
+	border: 0;
+	cursor: pointer;
+	display: -moz-inline-box; /* FF2 */
+	display: inline-block; /* Standard. IE8+, Saf, FF3+ */
+	font-size: 0;
+	line-height: 0;
+	height: 19px;
+	outline: none;
+	overflow: hidden;
+	padding: 0;
+	vertical-align: top;
+	text-indent: -32000px;
+	width: 19px;
+}
+#header .searchform .searchsubmit:hover {
+	background-position: bottom left;
+}
+
+/* Masthead */
+#masthead {
+	background: #ccc;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#e3e3e3));
+	background: -moz-linear-gradient(top,  #f2f2f2,  #e3e3e3);
+	-pie-background: linear-gradient(#f2f2f2, #e3e3e3);
+	/* Visually "move" page top padding below #masthead */
+	bottom: 30px;
+	border-bottom: 1px solid #494949;
+	/* Pull left (it's inside of str-container, but we need it flush left) */
+	margin-left: -15px;
+	overflow: hidden;
+	padding: 15px;
+	position: relative;
+	/* Set width to work with negative margins */
+	width: 948px;
+}
+#masthead h1 {
+	font-size: 38px;
+	margin: 0;
+	max-width: 100%;
+	overflow: hidden;
+	padding: 10px 15px;
+	text-shadow: #fff 0 1px 1px;
+	-o-text-overflow: ellipsis; /* Opera */
+	text-overflow: ellipsis; /* IE6+, Safari, Konqueror, Standard? */
+}
+/**
+ * Used for search page
+ */
+#masthead h1.page-title-b {
+	padding-left: 164px; /* Make room for label */
+	position: relative;
+}
+#masthead h1.page-title-b .label {
+	bottom: 18px;
+	color: #999;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: bold;
+	margin-left: -164px;
+	position: absolute;
+	text-transform: uppercase;
+	text-align: right;
+	width: 152px;
+}
+
+/* Secondary Navigation / Sub Nav */
+nav.nav-secondary {
+	background-color: #fff;
+	bottom: 30px;
+	font-size: 13px;
+	line-height: 1;
+	margin: 0;
+	padding: 0 15px;
+	position: relative;
+}
+nav.nav-secondary a:hover {
+	text-decoration: none;
+}
+nav.nav-secondary > ul > li {
+	max-width: 30%;
+}
+nav.nav-secondary li {
+	margin: 0 20px 0 0;
+}
+nav.nav-secondary a {
+	padding: 10px 0 5px;
+}
+nav.nav-secondary a:hover,
+nav.nav-secondary li:hover a {
+	border-top: 3px solid #ccc;
+	padding-top: 7px;
+}
+nav.nav-secondary a.current {
+	border-top: 3px solid #999;
+}
+/**
+ * Set back to dropdown defaults
+ */
+nav.nav-secondary li ul a,
+nav.nav-secondary li:hover li a,
+nav.nav-secondary li ul a:hover {
+	border: 0;
+	padding-top: 3px;
+}
+
+/* Main Content */
+#main-content {
+	-moz-border-radius-topleft: 12px; /* FF1+ */
+	-webkit-border-top-left-radius: 12px; /* Saf3+, Chrome */
+	-khtml-border-top-left-radius: 12px; /* Konqueror */
+	-moz-border-radius-topright: 12px; /* FF1+ */
+	-webkit-border-top-right-radius: 12px; /* Saf3+, Chrome */
+	-khtml-border-top-right-radius: 12px; /* Konqueror */
+	border-radius: 12px 12px 0 0; /* Standard. IE9, PIE */
+	position: relative;
+}
+#main-content .str-content {
+	background-color: #fff;
+	-moz-border-radius-topleft: 7px; /* FF1+ */
+	-webkit-border-top-left-radius: 7px; /* Saf3+, Chrome */
+	-khtml-border-top-left-radius: 7px; /* Konqueror */
+	-moz-border-radius-topright: 7px; /* FF1+ */
+	-webkit-border-top-right-radius: 7px; /* Saf3+, Chrome */
+	-khtml-border-top-right-radius: 7px; /* Konqueror */
+	border-radius: 7px 7px 0 0; /* Standard. IE9, PIE */
+	min-height: 400px;
+	padding-bottom: 30px;
+	padding-top: 30px;
+	/**
+	 * @workaround PIE z-index bug
+	 * @affected IE8
+	 */
+	position: relative;
+}
+#main-content .sticky {
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background: #f2f2f2;
+	padding: 15px 10px 10px 10px;
+	margin-left: -10px;
+	margin-right: -10px;
+}
+
+/* Footer */
+#footer {
+	background-color: #494949;
+}
+#footer .str-content {
+	background-color: #535353;
+	border-color: #3a3a3a;
+	color: #ddd;
+}
+#footer a {
+	color: #fff;
+}
+
+/**
+ * Uses lte-ie7.css for zoom clearing fix
+ */
+#footer-sub {
+	color: #575757;
+	font-size: 10px;
+	line-height: 18px;
+	margin: 16px 10px 0px 10px;
+	overflow: hidden;
+	padding-bottom: 20px;
+	position: relative;
+}
+#footer-sub a {
+	color: #999;
+}
+nav.nav-footer {
+	line-height: 18px;
+	max-width: 100%;
+	padding-bottom: 10px;
+}
+nav.nav-footer .site-title {
+	color: #828282;
+	float: left;
+	font-size: 20px;
+	font-weight: normal;
+	line-height: 1.2;
+	margin: 0;
+	/**
+	 * Overflow protection
+	 */
+	max-width: 100%;
+	overflow: hidden;
+	-o-text-overflow: ellipsis; /* Opera */
+	text-overflow: ellipsis; /* IE6+, Safari, Konqueror, Standard? */
+	text-shadow: rgba(0, 0, 0, .3) 0 -1px 0;
+}
+#footer-sub nav.nav-footer .site-title a {
+	color: #828282;
+}
+nav.nav-footer ul {
+	float: right;
+	font-size: 11px;
+	margin: 5px 0;
+}
+nav.nav-footer li {
+	margin-left: 15px;
+}
+nav.nav-footer a {
+	color: #999;
+}
+nav.nav-footer a:hover {
+	text-decoration: underline;
+}
+#footer-sub #site-generator {
+	float: right;
+	margin: 0 0 8px 8px;
+}
+#footer-sub #site-generator a {
+	color: #575757;
+}
+/**
+ * Uses lte-ie7.cs for inline-block/text-indent workaround
+ */
+#cf-logo {
+	background: url(../img/cf-logo.png) 0 0 no-repeat;
+	border: 0;
+	cursor: pointer;
+	display: -moz-inline-box; /* FF2 */
+	display: inline-block; /* Standard. IE8+, Saf, FF3+ */
+	font-size: 0;
+	line-height: 0;
+	height: 18px;
+	margin-left: 3px;
+	margin-top: -4px;
+	outline: none;
+	overflow: hidden;
+	vertical-align: middle;
+	text-indent: -32000px;
+	width: 92px;
+}

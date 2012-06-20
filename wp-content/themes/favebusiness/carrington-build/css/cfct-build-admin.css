@@ -1,0 +1,1721 @@
+/* Carrington Build Admin CSS */
+
+/* =Basics
+========================= */
+#post-body-content #postdiv,
+#post-body-content #postdivrich,
+#post-body-content #cfct-build-data,
+#post-body-content #cfct-select-new-row { 
+	display:none;
+}
+
+
+#cfct-build {
+	display: none; /* This will get updated by JavaScript to display, avoiding flashes of content on Firefox. */
+	min-width: 500px;
+}
+#cfct-build-data {
+	margin-bottom: 40px;
+}
+
+/* =Utility
+========================= */
+
+/* Clear floats */
+.cfct-clearfix:after {
+	clear: both;
+	content: " ";
+	display: block;
+	font-size: 0;
+	height: 0;
+	visibility: hidden;
+}
+.cfct-clearfix {
+	display: block;
+	zoom:1;
+}
+
+.mar-bottom-double {
+	margin-bottom: 30px;
+}
+
+.lnk-remove,
+.lnk-delete {
+	color: #bc0b0b;
+}
+.lnk-remove:hover,
+.lnk-delete:hover {
+	color: #ff0000;
+}
+
+/**
+ * Generic inline-block AJAX spinner
+ */
+.cfct-spinner {
+	background: url(../img/ajax-loader-light.gif);
+	color: rgba(0, 0, 0, 0);
+	display: -moz-inline-box; /* FF2 */
+	display: inline-block; /* Standard. IE8+, Saf, FF3+ */
+	/**
+	 * @bugfix inline-block fix
+	 * @see http://blog.mozilla.com/webdev/2009/02/20/cross-browser-inline-block/
+	 * @valid no
+	 */
+	zoom: 1;
+	*display: inline;
+	font-size: 0;
+	height: 16px;
+	text-indent: -32000px;
+	*text-indent: 0;
+	line-height: 0;
+	vertical-align: middle;
+	width: 16px;
+}
+
+.cfct-icon-add {
+	background:url(../img/add.gif) no-repeat 0 0;
+	height:10px;
+	width:9px;
+}
+.cfct-icon-wp {
+	background:url(../img/wp-19x19.png) no-repeat 0 center;
+	height:19px;
+	margin-right:2px;
+	width:19px;
+	vertical-align:text-top;
+}
+
+.cfct-error {
+	background-color: #ffebe8;
+	border: 1px solid #c00;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	padding: 0 0.6em;
+	margin: 5px 15px 2px;
+}
+.cfct-error a {
+	color: #c00;
+}
+
+.cfct-ajax-error-string {
+	white-space: pre-wrap;       /* css-3 */
+	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+	white-space: -pre-wrap;      /* Opera 4-6 */
+	white-space: -o-pre-wrap;    /* Opera 7 */
+	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+	width: 100%;
+	height: 250px;
+	overflow: auto;
+}
+
+.cfct-hidden {
+	display: none;
+}
+
+/* Columnized lists */
+.cfct-columnized ul {
+	list-style: none;
+	list-style-position: outside;
+	margin: 0;
+}
+.cfct-columnized-4x ul {
+	display: inline;
+	float: left;
+	width: 24.5%;
+}
+.cfct-columnized-4x ul li {
+	margin-right: 6px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	zoom: 1;
+}
+
+/* Form Utilities */
+
+/**
+ * Small inline help text
+ */
+.cfct-help {
+	color: #666;
+	display: block;
+	font-size: 10px;
+	font-style: italic;
+	font-weight: normal;
+	line-height: 1.2;
+	margin-bottom: 5px;
+}
+
+/**
+ * Section for forms. Adds bottom margin and fancy border legend.
+ */
+.cfct-module-form fieldset.cfct-form-section {
+	border-top: 1px solid #bbb;
+	margin-bottom: 20px;
+	padding-top: 8px;
+}
+.cfct-module-form fieldset.cfct-form-section legend {
+	background: url(../img/dfdfdf.png) repeat-x 0 auto;
+	color: #444;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 1.5;
+	padding-right: 5px;
+}
+
+/**
+ * Full-width inputs and textareas
+ */
+.cfct-module-form .cfct-input-full {
+	background: #fff;
+	border: 1px solid #ccc;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	border-radius: 4px;
+	display: block;
+	margin: 1px 0;
+	padding: 3px;
+}
+.cfct-module-form .cfct-input-full input[type=text],
+.cfct-module-form .cfct-input-full input[type=password],
+.cfct-module-form .cfct-input-full textarea {
+	background: transparent;
+	border: 0;
+	display: block;
+	padding: 0;
+	margin: 0;
+	width: 100% !important;
+}
+
+.cfct-textarea-wrapper {
+	background: #fff;
+	border-color: #dfdfdf;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	border-radius: 4px;
+	margin: 1px;
+	padding: 3px;
+}
+.cfct-textarea-wrapper-plain {
+	background: #fff;
+	padding: 3px;
+}
+.cfct-textarea-wrapper-plain textarea.cfct-textarea-full {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	width: 100% !important;
+}
+
+.cfct-multiselect {
+	background: #fff;
+	border: 1px solid #ccc;
+	-moz-border-radius: 3px; /* FF1+ */
+	-webkit-border-radius: 3px; /* Saf3+, Chrome */
+	-khtml-border-radius: 3px; /* Konqueror */
+	border-radius: 3px; /* Standard. IE9 */
+	display: block;
+	list-style: none;
+	max-height: 145px;
+	margin: 0 0 5px;
+	overflow: auto;
+	padding: 8px;
+}
+.cfct-multiselect ul {
+	list-style: none;
+	list-style-position: outside;
+	margin: 0;
+}
+.cfct-multiselect .cf-col,
+.cfct-multiselect li {
+	width: 24.998%;
+}
+.cfct-multiselect li {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	zoom: 1;
+}
+.cfct-multiselect .cf-col li {
+	margin-right: 6px;
+	width: auto;
+}
+.cfct-multiselect .cf-col {
+	display: inline;
+	float: left;
+}
+
+/* Carrington buttons */
+.cfct-button,
+#cfct-edit-module .cfct-button {
+	-moz-border-radius: 11px;
+	-khtml-border-radius: 11px;
+	-webkit-border-radius: 11px;
+	border-radius: 11px;
+	border-style: solid;
+	border-width: 1px;
+	-moz-box-sizing: content-box;
+	-khtml-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+	cursor: pointer;
+	font-size: 11px;
+	line-height: 16px;
+	padding: 2px 8px;
+	text-decoration: none;
+
+}
+a.cfct-button {
+	-webkit-border-radius: 10px;
+	display:-moz-inline-stack;
+	display:inline-block;
+	line-height: 1.2em;
+	padding: 4px 10px;
+	white-space: nowrap;
+}
+.cfct-button-dark,
+.cfct-button-dark:visited,
+input.cfct-button-dark[type=submit],
+input.cfct-button-dark[type=button] {
+	background:#191919 url(../img/button-gradients-sprite.gif) repeat-x 0 -400px;
+	border-color:#333;
+	color:#f8f8f8;
+	font-weight:bold;
+	text-shadow:rgba(0,0,0,.6) 0 -1px 0;
+	-moz-box-shadow:0 1px 0 rgba(255,255,255,.15);
+	-webkit-box-shadow:0 1px 0 rgba(255,255,255,.15);
+	box-shadow:0 1px 0 rgba(255,255,255,.15);
+}
+.cfct-button-dark:focus,
+.cfct-button-dark:hover,
+input.cfct-button-dark[type=submit]:focus,
+input.cfct-button-dark[type=submit]:hover,
+input.cfct-button-dark[type=button]:focus,
+input.cfct-button-dark[type=button]:hover {
+	border-color:#000;
+	color:#fff;
+}
+.cfct-button-dark:active,
+input.cfct-button-dark[type=submit]:active,
+input.cfct-button-dark[type=button]:active {
+	background:#191919 url(../img/button-gradients-sprite.gif) repeat-x 0 -500px;
+}
+.cfct-popup-actions input.cfct-button-dark[type=submit],
+.cfct-popup-actions input.cfct-button-dark[type=button] {
+	border-color:#191919;
+}
+
+
+/* Advanced Actions Menu */
+.cfct-popup-header .cfct-build-options {
+	bottom: 8px;
+	position: absolute;
+	right: 6px;
+}
+.cfct-popup-advanced-actions {
+	background: #242424 url(../img/advanced-menu-bg-top.gif) repeat-x;
+	color: #ccc;
+	padding: 14px;
+}
+.cfct-popup-advanced-actions a {
+	color: #ccc;
+}
+.cfct-popup-advanced-actions a:hover {
+	color: #fff;
+}
+.cfct-popup-advanced-actions .close {
+	float: right;
+	margin-left: 20px;
+}
+#cfct-edit-module-form .cfct-popup-advanced-actions input[type=text] {
+	border: #333 solid 1px;
+	border-right: 0;
+	box-shadow:0 1px 0 rgba(255,255,255,.15);
+	margin: 0;
+	padding-bottom: 3px;
+	padding-top: 2px;
+	width: 375px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	-moz-border-radius-topright: 0;
+	-moz-border-radius-bottomright: 0;
+	-moz-box-shadow:0 1px 0 rgba(255,255,255,.15);
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	-webkit-border-top-right-radius: 0;
+	-webkit-border-bottom-right-radius: 0;
+	-webkit-box-shadow:0 1px 0 rgba(255,255,255,.15);
+	box-shadow:0 1px 0 rgba(255,255,255,.15);
+}
+#cfct-edit-module-form .cfct-popup-advanced-actions input:focus {
+	outline: 0;
+}
+#cfct-edit-module-form .cfct-popup-advanced-actions .cfct-button-dark {
+	background:#565555 url(../img/button-dark-select-sprite.gif) no-repeat 50% 0;
+	margin: 0;
+	width: 8px;
+	-moz-border-radius-topleft: 0;
+	-moz-border-radius-bottomleft: 0;
+	-webkit-border-top-left-radius: 0 !important;
+	-webkit-border-bottom-left-radius: 0;
+}
+#cfct-edit-module-form .cfct-popup-advanced-actions .cfct-button-dark:active,
+#cfct-edit-module-form .cfct-popup-advanced-actions input.cfct-button-dark[type=submit]:active,
+#cfct-edit-module-form .cfct-popup-advanced-actions input.cfct-button-dark[type=button]:active {
+	background:#848383 url(../img/button-dark-select-sprite.gif) no-repeat 50% -100px;
+}
+#cfct-edit-module-form .cfct-popup-advanced-actions p {
+	font-size: .9em;
+	margin: 0 0 5px 0;
+}
+.cfct-select-menu-wrapper {
+	display: inline-block;
+	position: relative;
+}
+.cfct-select-menu {
+	background-color: #4c4c4c;
+	left: 0;
+	position: absolute;
+	top: 22px;
+	width: 400px;
+	z-index: 100;
+	-webkit-border-bottom-left-radius: 4px;
+	-webkit-border-bottom-right-radius: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	-moz-border-radius-bottomright: 4px;
+}
+.cfct-select-menu ul {
+	padding: 10px 15px;
+}
+.cfct-select-menu ul li {
+	display: inline-block;
+	width: 32%;
+}
+.cfct-select-menu a {
+	color: #fff;
+}
+.cfct-select-menu a:hover {
+	color: #ccc;
+}
+.cfct-select-menu a.inactive {
+	color: #666;
+}
+
+/* Forms Shared */
+
+.cfct-module-form textarea,
+/* .cfct-module-form select, */
+.cfct-module-form input[type="text"] {
+	width: 98%;
+}
+.cfct-module-form input.cfct-input-short {
+	width: 30%;
+}
+/* MISC */
+p.cancel {
+	margin-top: -12px;
+	margin-bottom: 0;
+	text-align: right;
+}
+
+/* =Build Header
+========================= */
+
+#cfct-build-header {
+	background: url(../img/button-gradients-sprite.gif) repeat-x 0 -700px;
+	height: 28px;
+	margin: 0 0 10px;
+	padding-bottom: 1px;
+	padding-left: 10px;
+	position: relative;
+}
+.cfct-build-header-group {
+	margin-right: 10px;
+}
+.cfct-build-header-group-secondary {
+	float: right;
+	margin-left: 10px;
+}
+
+/* Main tab controls */
+.cfct-tabs {
+	margin: 0;
+	padding: 0;
+}
+.cfct-tabs li {
+	display: inline;
+	float: left;
+	margin: 0 2px 0 0;
+}
+.cfct-tabs li.active {
+	border-bottom:1px solid #f9f9f9;
+}
+.cfct-tabs a,
+.cfct-tabs a:visited {
+	background:#F1F1F1 url(../img/button-gradients-sprite.gif) repeat-x 0 0;
+	border: 1px solid #eee;
+	border-color: #e1e1e1 #e1e1e1 #c6c6c6;
+	border-bottom-width: 0;
+	-moz-border-radius-topleft: 6px; /* FF1+ */
+	-webkit-border-top-left-radius: 6px; /* Saf3+, Chrome */
+	-khtml-border-top-left-radius: 6px; /* Konqueror */
+	border-top-left-radius: 6px; /* Standard. IE9 */
+	-moz-border-radius-topright: 6px; /* FF1+ */
+	-webkit-border-top-right-radius: 6px; /* Saf3+, Chrome */
+	-khtml-border-top-right-radius: 6px; /* Konqueror */
+	border-top-right-radius: 6px; /* Standard. IE9 */
+	color: #999;
+	float: left;
+	font: 16px/26px Georgia,"Times New Roman","Bitstream Charter",Times,serif;
+	height: 26px;
+	padding: 0 12px;
+	text-shadow: #fff 0 1px 0;
+	text-decoration: none;
+}
+.cfct-tabs a:focus,
+.cfct-tabs a:hover {
+	color:#777;
+}
+.cfct-tabs .active a,
+.cfct-tabs .active a:visited {
+	background-color: #f9f9f9;
+	background-position: 0 -100px;
+	border-color: #c6c6c6 #c6c6c6 #f9f9f9;
+	border-bottom-width: 1px;
+	color: #333;
+	cursor: default;
+}
+
+#cfct-build-messages .cfct-message-content {
+	color: #999;
+	display:block;
+	font-size:10px;
+	line-height:18px;
+	margin-top:3px;
+	padding:0 0 0 15px;
+	white-space:nowrap;
+}
+#cfct-build-messages.cfct-message-info .cfct-message-content {
+	background:#e5e5e5;
+	border-top-color:#d5d5d5;
+	color:#777;
+}
+#cfct-build-messages.cfct-message-loading .cfct-message-content {
+	background:#e5e5e5 url(../img/ajax-loader-light.gif) 4px center no-repeat;
+	border-top-color:#d5d5d5;
+	color:#777;
+	padding-left:24px;
+}
+#cfct-build-messages.cfct-message-confirm .cfct-message-content {
+	background: url(../img/message-confirm.gif) 0 center no-repeat;
+}
+#cfct-build-messages.cfct-message-error .cfct-message-content {
+	background: url(../img/message-error.gif) 3px center no-repeat;
+}
+#cfct-build-messages.cfct-message-warning .cfct-message-content {
+	background: url(../img/message-warning.gif) 6px center no-repeat;
+}
+
+/* Build Options dropdown */
+
+.cfct-build-options {
+	position: relative;
+	overflow: visible;
+}
+.cfct-build-options .cfct-build-options-header,
+.cfct-build-options .cfct-build-help-header {
+	-moz-border-radius: 3px 3px 0 0;
+	-webkit-border-top-right-radius: 3px;
+	-webkit-border-top-left-radius: 3px;
+	-khtml-border-top-right-radius: 3px;
+	-khtml-border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+	padding:0; /* override greedy styles inherited from WP */
+	margin:0 !important;
+	float: left;
+}
+.cfct-build-options .cfct-build-options-header a.module-options-button,
+.cfct-build-options .cfct-build-help-header a.module-help-button {
+	background:url(../img/options-cog.png) no-repeat 4px 4px;
+	display:block;
+	height: 22px;
+	text-indent: -32000px;
+	width: 25px;
+}
+.cfct-build-options-active .cfct-build-options-header a.module-options-button {
+	background-position:4px -96px;
+}
+.cfct-build-options .cfct-build-help-header a.module-help-button {
+	background:url(../img/options-help.png) no-repeat 4px 4px;
+}
+.cfct-build-options-list {
+	-moz-border-radius: 3px 0 3px 3px;
+	-khtml-border-bottom-left-radius: 3px;
+	-khtml-border-bottom-right-radius: 3px;
+	-khtml-border-top-left-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	-webkit-border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-top-left-radius: 3px;
+	display: none;
+	font-size:11px;
+	padding: 5px 0;
+	position: absolute;
+	right: 0;
+	top: 22px;
+	white-space: nowrap;
+	z-index: 99;
+}
+.cfct-build-options-active .cfct-build-options-header,
+.cfct-build-options-active .cfct-build-options-list {
+	background:url(../img/1b1b1b.png);
+}
+.cfct-build-options-active .cfct-build-options-list {
+	display:block;
+}
+.cfct-build-options-list li {
+	margin:0;
+}
+.cfct-build-options-list a,
+.cfct-build-options-list a:visited {
+	color:#ccc;
+	display:block;
+	padding:2px 9px;
+	text-decoration:none;
+}
+.cfct-build-options-list a:focus,
+.cfct-build-options-list a:hover {
+	background-color:#454545;
+	color:#ccc;
+}
+
+/* =Rows
+============================================================== */
+
+#cfct-sortables { /* Row sortables */
+	position:relative; /* Bugfix: prevents draggables positioning bug in Gecko */
+}
+
+.row,
+.cfct-row-draggable-placeholder {
+	margin: 0 0 5px;
+}
+.row {
+	background: #4e4e4e;
+	border:3px solid #4e4e4e;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-khtml-border-radius: 6px;
+	border-radius: 6px;
+	position:relative;
+}
+.cfct-row-inner {
+	padding-left:24px;
+}
+.cfct-multi-module-row .cfct-row-inner {
+	padding-left: 0;
+}
+.cfct-row-blocks { /* table */
+	background-color: #6f6f6f;
+	/**
+	 * Necessary for WP3.3+ compatibility
+	 * Previous versions of WordPress set this on tables everywhere.
+	 */
+	table-layout: fixed;
+	-moz-border-radius: 4px; /* FF1+ */
+	-webkit-border-radius: 4px; /* Saf3+, Chrome */
+	-khtml-border-radius: 4px; /* Konqueror */
+	border-radius: 4px; /* Standard. IE9 */
+	border-collapse: collapse;
+	width: 100%;
+}
+.cfct-row-blocks tr {
+	vertical-align: top;
+}
+.cfct-row-blocks td {
+	padding: 0;
+}
+
+.cfct-row-handle {
+	background:url(../img/rivets-sprite.gif) repeat-y 0 0;
+	height:100%;
+	left:0;
+	position: absolute;
+	top:0;
+	width:24px;
+}
+.ui-sortable .cfct-row-handle { /* Sortables activated */
+	cursor:move;
+}
+.ui-sortable .cfct-row-handle:hover{
+	background-color:#484848;
+	background-position:-100px 0;
+}
+.cfct-row-handle .cfct-row-delete {
+	background:url(../img/close.png) no-repeat 0 0;
+	float: left;
+	height:21px;
+	overflow:hidden;
+	text-indent:-32000px;
+	width:21px;
+}
+.cfct-row-draggable-placeholder {
+	background:#f5f5f5;
+	-khtml-border-radius:6px;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border: 1px dashed #bbb;
+	padding:2px;
+
+}
+
+/* New row chooser */
+#cfct-sortables-add-container {
+	position: relative;
+	z-index: 5; /* mainly for ie, but put here for safety */
+}
+#cfct-select-new-row {
+	margin:0 auto;
+	position:absolute;
+	z-index:5;
+}
+.cfct-rows-bottom-bar {
+	background:#4e4e4e url(../img/button-gradients-sprite.gif) repeat-x 0 -600px;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	-khtml-border-radius:6px;
+	border-radius:6px;
+	padding:6px;
+	text-align:center;
+}
+#cfct-loading-row {
+	display: block;
+	width: 100%;
+	height: 100px;
+	background: transparent url(../img/ajax-loader-light.gif) 50% 50% no-repeat;
+}
+
+/* Faux rows (for welcome) */
+.cfct-faux-build .row {
+	background: transparent;
+	border: 0;
+	overflow: hidden;
+	padding: 0;
+}
+.cfct-faux-build .c {
+	float: left;
+	padding: 0;
+	z-index: 0;
+}
+.cfct-faux-module {
+	border: 4px dashed #ddd;
+	-moz-border-radius: 6px; /* FF1+ */
+	-webkit-border-radius: 6px; /* Saf3+, Chrome */
+	-khtml-border-radius: 6px; /* Konqueror */
+	border-radius: 6px; /* Standard. IE9 */
+	height: 78px;
+	margin: 5px;
+}
+
+/* =Blocks
+========================= */
+
+.c {
+	position: relative;
+	vertical-align: top;
+}
+
+.c6-12,
+.c6-34,
+.c6-56 {
+	width: 33.3%;
+}
+.c6-1234,
+.c6-3456 {
+	width: 66.6%;
+}
+.c4-1234 {
+	width: 100%;
+}
+.c4-12,
+.c4-34 {
+	width: 49.999%;
+}
+
+/* =Modules
+========================= */
+
+.cfct-empty-module {
+	padding: 10px;
+}
+
+.cfct-build-module-controls .cfct-build-add-module:first-child a {
+	-moz-border-radius-bottomleft:4px;
+	-webkit-border-bottom-left-radius:4px;
+	-khtml-border-bottom-left-radius:4px;
+	border-bottom-left-radius:4px;
+}
+.cfct-build-module-controls .cfct-build-add-module:last-child a {
+	-moz-border-radius-bottomright:4px;
+	-webkit-border-bottom-right-radius:4px;
+	-khtml-border-bottom-right-radius:4px;
+	border-bottom-right-radius:4px;
+}
+.cfct-build-add-module p {
+	margin:0;
+}
+.cfct-build-add-module a,
+.cfct-build-add-module a:visited {
+	background:#6e6e6e url(../img/button-gradients-sprite.gif) repeat-x 0 -200px;
+	border-bottom:1px solid #4e4e4e;
+	border-right:1px solid #636363;
+	border-top:1px solid #4e4e4e;
+	color:#f8f8f8;
+	display:block;
+	font-weight:bold;
+	font-size: .85em;
+	height:18px;
+	line-height:18px;
+	padding:4px 10px;
+	text-decoration:none;
+	text-shadow: rgba(0,0,0,0.6) 0 -1px 0;
+}
+.cfct-build-add-module a:focus,
+.cfct-build-add-module a:hover {
+	color: #fff;
+}
+.cfct-build-add-module a:active {
+	background-color: #666;
+	background-position: 0 -300px;
+	color: #fff;
+}
+
+.cfct-block-modules {
+	position: relative;
+	padding: 2px 1px 0;
+	min-height: 71px;
+}
+/* Extra padding for first column of modules */
+.c4-1 .cfct-block-modules,
+.c4-12 .cfct-block-modules,
+.c4-123 .cfct-block-modules,
+.c4-1234 .cfct-block-modules,
+.c6-1 .cfct-block-modules,
+.c6-12 .cfct-block-modules,
+.c6-123 .cfct-block-modules,
+.c6-1234 .cfct-block-modules,
+.c6-12345 .cfct-block-modules,
+.c6-123456 .cfct-block-modules {
+	padding-left: 2px;
+}
+/* Extra padding for last column of modules */
+.c4-4 .cfct-block-modules,
+.c4-34 .cfct-block-modules,
+.c4-234 .cfct-block-modules,
+.c4-1234 .cfct-block-modules,
+.c6-6 .cfct-block-modules,
+.c6-56 .cfct-block-modules,
+.c6-456 .cfct-block-modules,
+.c6-3456 .cfct-block-modules,
+.c6-23456 .cfct-block-modules,
+.c6-123456 .cfct-block-modules {
+	padding-right: 2px;
+}
+
+.cfct-module {
+	background:#565656 url(../img/module-gradient.gif) no-repeat -1px 0;
+	color:#eee;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	-khtml-border-radius:4px;
+	border-radius:4px;
+	margin-bottom:2px;
+	min-height:50px;
+	padding: 11px 10px 10px 60px;
+	position:relative;
+	z-index:5;
+}
+.cfct-module:hover,
+.cfct-module-helper {
+	background-color:#1e1e1e;
+	background-repeat:repeat-x;
+	background-position:0 0;
+}
+.cfct-module dd {
+	margin: 2px 0 0 0;
+}
+
+.cfct-module .cfct-module-rendering {
+	float: right;
+}
+
+.cfct-module .cfct-module-edit-clear {
+	margin-left:-3px;
+}
+.cfct-module .cfct-module-edit-clear a,
+.cfct-module .cfct-module-edit-clear a:visited {
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	-khtml-border-radius:3px;
+	border-radius:3px;
+	color:#999;
+	display:-moz-inline-stack;
+	display:inline-block;
+	font-size: 9px;
+	line-height:15px;
+	padding:0 3px;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+.cfct-module-hover .cfct-module-edit-clear a,
+.cfct-module-hover .cfct-module-edit-clear a:visited {
+	background:#555;
+	color:#181818;
+}
+.cfct-module .cfct-module-content-title {
+	line-height:1.2;
+	margin: 0;
+}
+.cfct-module-content-icon {
+	left:0;
+	margin:8px 5px 0;
+	position:absolute;
+	top:0;
+}
+.cfct-module .cfct-module-content-type {
+	color:#999;
+	display:block;
+	font-size:10px;
+}
+.cfct-row-blocks .ui-sortable .cfct-module {
+	cursor: move;
+}
+.cfct-module:hover .cfct-module-content { /* show it on rollover */
+	background:url(../img/module-drag-handle.gif) no-repeat right center;
+}
+.cfct-row-blocks .ui-sortable .cfct-module-hover .cfct-module-content {
+	background-position:right center;
+}
+.cfct-module-draggable-placeholder {
+	background:#6f6f6f;
+	border: 1px dashed #555;
+	-moz-border-radius: 6px; /* FF1+ */
+	-webkit-border-radius: 6px; /* Saf3+, Chrome */
+	-khtml-border-radius: 6px; /* Konqueror */
+	border-radius: 6px; /* Standard. IE9 */
+	margin-bottom: 2px;
+	padding: 3px;
+	z-index: 5;
+}
+
+/* =Popup
+========================= */
+.cfct-popup-anchored { /* Bubble style. Default is top tick */
+	background:url(../img/cfct-popup-tick-sprite.png) no-repeat center 0;
+	padding-top:8px;
+}
+.flopped-y .cfct-popup-anchored {
+	background-position:center bottom;
+	padding-bottom:8px;
+	padding-top:0;
+}
+.cfct-popup {
+	background: url(../img/1b1b1b.png);
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	-khtml-border-radius:6px;
+	border-radius:6px;
+	padding:7px;
+}
+.cfct-popup-inner-wrap {
+	/**
+	 * needed for taming extra added popup elements
+	 */
+	position: relative;
+	overflow: hidden;
+}
+
+#cfct-spinner-dialog  {
+	display: block;
+	margin: 0 auto;
+	width: 100px;
+	height: 100px;
+}	
+#cfct-spinner-dialog .cfct-popup-spinner {
+	text-indent: -999px;
+	color: white;
+	width: 100%;
+	height: 100%;
+	display: block;
+	background: transparent url(../img/ajax-loader-dark.gif) 50% 50% no-repeat;
+}
+
+.cfct-popup textarea,
+.cfct-popup input,
+.cfct-popup select {
+	border-color: #ccc;
+	border-top-color: #c0c0c0;
+}
+
+.cfct-module-form label {
+	color: #666;
+	font-size: 11px;
+}
+.cfct-module-form textarea,
+.cfct-module-form input[type="text"],
+.cfct-module-form input[type="password"],
+.cfct-module-form select {
+	border:1px solid #ccc;
+	-moz-border-radius:3px;
+	-khtml-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+}
+
+#cfct-build a:focus,
+#cfct-build a:active,
+.cfct-module-form textarea:focus,
+.cfct-module-form select:focus,
+.cfct-module-form input:focus {
+	outline:0;
+}
+
+.cfct-popup-header {
+	background:#2a2a2a url(../img/popup-gradients.gif) repeat-x 0 -500px;
+	-moz-border-radius: 3px 3px 0 0;
+	-webkit-border-top-right-radius: 3px;
+	-webkit-border-top-left-radius: 3px;
+	-khtml-border-top-right-radius: 3px;
+	-khtml-border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+	padding: 9px 12px;
+	position: relative;
+	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+	/**
+	 * @workaround incorrect z-index stacks
+	 * IE < 8 creates a new z-index stack for every positioned parent. This means
+	 * We have to make sure this positioned header appears above content so the
+	 * context menu will appear above the content. 
+	 * @affected ie7
+	 */
+	z-index: 2;
+}
+.cfct-popup-header-has-icon {
+	min-height:40px;
+	padding-left:60px;
+	position:relative;
+}
+.cfct-popup-icon {
+	height:40px;
+	left:0;
+	margin:7px 0 0 12px;
+	position:absolute;
+	top:0;
+	width:40px;
+}
+.cfct-popup-title,
+#poststuff h2.cfct-popup-title,
+.cfct-modules-list-head {
+	color:#fff;
+	font:italic normal normal 18px/1.2 Georgia, 'Times New Roman', 'Bitstream Charter', Times, serif;
+	margin:0;
+	text-shadow:none;
+}
+.cfct-modules-list-head {
+	color: #333;
+	padding-bottom: 1px;
+	margin-bottom: 3px;
+	border-bottom: 1px solid #999;
+}
+
+.cfct-popup-subtitle {
+	color:#888;
+	margin:0;
+}
+.cfct-popup-content {
+	background: #ddd url(../img/popup-gradients.gif) repeat-x 0 -1000px;
+	padding: 12px;
+	position: relative;
+}
+.cfct-popup-content.cfct-module-sideload {
+	padding: 0;
+}
+.cfct-popup-content.cfct-popup-content-fullscreen { /* flush edges */
+	padding:0;
+}
+.cfct-popup-actions {
+	background:#2a2a2a url(../img/popup-gradients.gif) repeat-x 0 0;
+	border-bottom:1px solid #363636;
+	border-top:1px solid #292929;
+	-moz-border-radius: 0 0 3px 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	-khtml-border-bottom-right-radius: 3px;
+	-khtml-border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	color:#999;
+	line-height:24px;
+	padding:7px 12px;
+	text-shadow:0 -1px 0 rgba(0,0,0,.4);
+}
+.cfct-popup-actions a,
+.cfct-popup-actions a:visited {
+	color:#ccc;
+}
+.cfct-popup-actions a:focus,
+.cfct-popup-actions a:hover,
+.cfct-popup-actions a:active {
+	color:#ddd;
+}
+.cfct-popup-actions .submit {
+	margin:0;
+}
+
+#cfct-module-list-toggles {
+	background:url(../img/toggle-view-icons.png) no-repeat 0 0;
+	float: right;
+	height:18px;
+	margin:3px 0;
+	text-indent:-32000px;
+	width:47px;
+}
+.cfct-module-list-toggle {
+	background:url(../img/toggle-view-icons.png) no-repeat 0 0;
+	float:left;
+	height:18px;
+	text-indent:-32000px;
+	width:23px;
+}
+#cfct-module-list-toggle-detail {
+	background-position:0 -18px;
+}
+#cfct-module-list-toggle-compact {
+	background-position:-23px -18px;
+}
+#cfct-module-list-toggle-detail:hover {
+	background-position:0 -36px;
+}
+#cfct-module-list-toggle-compact:hover {
+	background-position:-23px -36px;
+}
+#cfct-module-list-toggle-detail.active {
+	background-position:0 -54px;
+	cursor: default;
+}
+#cfct-module-list-toggle-compact.active {
+	background-position:-23px -54px;
+	cursor: default;
+}
+
+.cfct-popup .cfct-dialog-activity {
+	background: url(../img/ajax-loader-dark.gif) 0 center no-repeat;
+	margin:0 5px;
+	padding-left: 20px;
+	float: right;
+}
+
+.cfct-popup-content fieldset.cfct-ftl-border legend {
+	background: #dfdfdf;
+	border: 0;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0 0 8px;
+	padding: 2px 5px 2px 0;
+}
+.cfct-popup-content fieldset.cfct-ftl-border {
+	border-top: 1px solid #bbb;
+	margin: 15px 0;
+}
+
+/* inline label & form elements */
+.cfct-popup-content .cfct-inline-els {
+	margin: 5px 0;
+	overflow: hidden;
+	padding: 0;
+	zoom: 1;
+}
+.cfct-popup-content .cfct-inline-els label {
+	height: 25px;
+	line-height: 25px;
+	float: left;
+	width: 120px;
+	clear: left;
+}
+.cfct-popup-content .cfct-inline-els input,
+.cfct-popup-content .cfct-inline-els textarea,
+.cfct-popup-content .cfct-inline-els select {
+	float: left;
+	margin-right: 0;
+}
+.cfct-popup-content .cfct-inline-els input[type=text],
+.cfct-popup-content .cfct-inline-els textarea {
+	width: 625px;
+}
+.cfct-popup-content .cfct-inline-els input[type=checkbox],
+.cfct-popup-content .cfct-inline-els input[type=radio],
+.cfct-popup-content .cfct-inline-els select {
+	width: auto;
+}
+.cfct-popup-content .cfct-inline-els input[type=checkbox],
+.cfct-popup-content .cfct-inline-els input[type=radio] {
+	margin-top: 8px;
+}
+
+/* =Module Repeater Block
+========================= */
+
+.cfct-module-admin-repeater-block,
+.cfct-module-admin-repeater-block ol li {
+	-moz-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	margin: 0;
+}
+.cfct-module-admin-repeater-block {
+	border: 1px solid #CCC;
+	background: #EEE;
+	padding: 0;
+}
+.cfct-module-admin-repeater-block ol {
+	list-style: none;
+	list-style-position: outside;
+	margin: 0;
+	padding: 0;
+}
+.cfct-module-admin-repeater-block ol li.no-items-item {
+	display: none;
+	padding: 5px;
+}
+.cfct-module-admin-repeater-block ol.no-items li.no-items-item {
+	display: block;
+}
+.cfct-module-admin-repeater-block ol.no-items li.no-items-item p {
+	padding: 0;
+	margin: 0;
+}
+.cfct-repeater-item {
+	padding: 7px 9px 5px;
+	position: relative;
+	zoom: 1;
+}
+.cfct-repeater-item + .cfct-repeater-item {
+	border-top: 1px solid #CCC;
+	-moz-border-radius-topleft: 0; /* FF1+ */
+	-webkit-border-top-left-radius: 0; /* Saf3+, Chrome */
+	-khtml-border-top-left-radius: 0; /* Konqueror */
+	border-top-left-radius: 0; /* Standard. IE9 */
+	-moz-border-radius-topright: 0; /* FF1+ */
+	-webkit-border-top-right-radius: 0; /* Saf3+, Chrome */
+	-khtml-border-top-right-radius: 0; /* Konqueror */
+	border-top-right-radius: 0; /* Standard. IE9 */
+}
+.cfct-repeater-item-remove {
+	color: #cc0000;
+	font-size: 11px;
+	margin: 5px 9px 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.cfct-repeater-item > .cfct-title {
+	display: block;
+	font-size: 11px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* =Side Loading
+========================= */
+.cfct-popup .cfct-module-sideload {
+	display: block; 
+	position: absolute; 
+	top: 0; 
+	left: -3000px; 
+	width: 100%; 
+	height: 100%; 
+	overflow: hidden;
+	background: #000;
+	z-index: 10;
+}
+.cfct-module-sideload .cfct-popup-content {
+	overflow: auto;
+	background: #DDDDDD;
+}
+#cfct-popup .cfct-popup .cfct-module-sideload .cfct-loading {
+	background: transparent url(../img/ajax-loader-big-dark.gif) 50% 50% no-repeat;
+	height: 100%;
+	text-indent: -9999em;
+	width: 100%;
+}
+/* for after the module is loaded */
+#cfct-popup .cfct-popup .cfct-module-sideload .cfct-module-form .cfct-loading {
+    background: transparent url(../img/ajax-loader-light.gif) 0 50% no-repeat;
+	color: gray;
+	height: 18px;
+	padding-left: 25px;
+	margin: 1em;
+}
+
+/* =Reorder Spinner
+========================= */
+.cfct-reorder-status,
+.cfct-reorder-overlay {
+	position:absolute; 
+	z-index:99; 
+	height:100%; 
+	width:100%; 
+	top:0; 
+	left:0;	
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	-khtml-border-radius:6px;
+	border-radius:6px;
+	overflow: hidden;
+}
+.cfct-reorder-overlay {
+	background:black; 
+	filter: alpha(opacity=35);
+	opacity: 0.35;
+}
+
+/* =Module-level spinner
+========================= */
+.cfct-module-status,
+.cfct-module-status-overlay {
+	position:absolute; 
+	z-index:99; 
+	height:100%; 
+	width:100%; 
+	top:0; 
+	left:0;	
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	-khtml-border-radius:6px;
+	border-radius:6px;
+	overflow: hidden;
+}
+.cfct-module-status-overlay {
+	background:black; 
+	filter: alpha(opacity=35);
+	opacity: 0.35;
+}
+
+/* =Generic Loading Spinner Div
+========================= */
+#cfct-popup .cfct-loading {
+	color: gray;
+	margin: 5px 0;
+	padding: 0 0 0 20px;
+	background: transparent url(../img/ajax-loader-light.gif) 0 50% no-repeat;
+}
+
+/* =Icon Lists
+========================= */
+
+.cfct-il {
+	list-style: none;
+}
+.cfct-il-item {
+	display:-moz-inline-stack;
+	display:inline-block;
+	margin:0;
+	vertical-align:top;
+	width:32%;
+}
+.cfct-il-a,
+.cfct-il-a:visited {
+	color:#666;
+	display:block;
+	margin: 3px 3px 12px;
+	min-height:72px;
+	overflow:hidden;
+	padding-left:82px;
+	position:relative;
+	text-decoration:none;
+	-webkit-transition:color .1s linear;
+}
+.cfct-il-a:focus,
+.cfct-il-a:hover {
+	border-color:#ddd #ccc #ccc #ddd;
+	color:#444;
+}
+.cfct-il-a:active {
+	border-color:#ccc #ddd #ddd #ccc;
+}
+.cfct-il-icon {
+	background: #ccc url(../img/button-gradients-sprite.gif) 0 -800px;
+	border: 1px solid #bbb;
+	border-color:#bbb #bbb #b0b0b0;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	-khtml-border-radius:6px;
+	border-radius:6px;
+	width: 50px;
+	height: 50px;
+	left:0;
+	padding:10px;
+	position:absolute;
+	vertical-align:middle;
+}
+a:hover .cfct-il-icon {
+	background-color:#c5c5c5;
+	background-position:0 -900px;
+}
+a:active .cfct-il-icon {
+	background-position:0 -1000px;
+}
+.cfct-il-title {
+	color:#333;
+	display:block;
+	font:italic normal normal 16px/1.2 Georgia, 'Times New Roman', 'Bitstream Charter', Times, serif;
+	margin:3px 0 0;
+}
+.cfct-il-description {
+	font-size:11px;
+}
+.cfct-il-mini .cfct-il-item {
+	width:auto;
+	margin-bottom: 10px;
+}
+.cfct-il-mini .cfct-il-a {
+	background:transparent;
+	border:0;
+	margin-bottom:3px;
+	padding-left:0;
+	position:static;
+}
+.cfct-il-mini .cfct-il-icon {
+	float:none;
+	margin:0;
+	position:static;
+}
+.cfct-il-mini .cfct-il-description {
+	display:none;
+}
+.cfct-il-mini .cfct-il-title {
+	color:#777;
+	font:normal normal normal 11px/1.2 'Lucida Grande', Verdana, Arial, 'Bitstream Vera Sans', sans-serif;
+	overflow:hidden;
+	text-align:center;
+	-o-text-overflow:ellipsis;
+	text-overflow:ellipsis;
+	width:72px;
+	white-space:nowrap;
+}
+
+.cfct-il-mini.il-hover-titles .cfct-il-item {
+	padding-bottom: 1em;
+}
+.cfct-il-mini.il-hover-titles .cfct-il-title {
+	display: none;
+	margin-left: -34px;
+	position: absolute;
+	width: 140px;
+}
+.cfct-il-mini.il-hover-titles .cfct-il-item:focus .cfct-il-title,
+.cfct-il-mini.il-hover-titles .cfct-il-item:hover .cfct-il-title {
+	display: block;
+}
+
+/* =Welcome
+========================= */
+
+#cfct-welcome-chooser {
+	/*height:310px;*/
+}
+#cfct-welcome-splash,
+#cfct-welcome-templates {
+	left:50%;
+	margin:60px auto 0 -240px;
+	position:absolute;
+	width:480px;
+	z-index: 10;
+}
+#cfct-welcome-options li {
+	display:inline;
+	float: left;
+	text-align: center;
+	width: 220px;
+}
+#cfct-welcome-options.cfct-welcome-no-templates li {
+	width: 440px;
+}
+
+/* =Image Select Boxes
+========================= */
+/**
+ * Uses cfct-build-admin-ie.css for zoom fix
+ */
+.cfct-image-select-items-list {
+	border: 1px solid #E3E3E3;
+	background: #FFFFFF;
+	border-color: #ccc;
+	border-top-color: #c0c0c0;
+	-moz-border-radius: 4px; /* FF1+ */
+	-webkit-border-radius: 4px; /* Saf3+, Chrome */
+	-khtml-border-radius: 4px; /* Konqueror */
+	border-radius: 4px; /* Standard. IE9 */
+	overflow: auto;
+	padding: '.$padding.';
+	position: relative;
+}
+.cfct-image-select-items-list-horizontal {
+	width: 745px;
+	height: 132px;
+}
+.cfct-image-select-items-list-vertical {
+	width: 190px;
+	height: 300px;
+}
+.cfct-image-select-items-list ul {
+	position: relative;
+	white-space: nowrap;
+}
+.cfct-image-select-items-list-horizontal ul {
+	height: 110px;
+	width: auto;
+}
+.cfct-image-select-items-list-vertical ul {
+	height: auto;
+	width: 100%;
+}
+
+.cfct-image-select-items-list-item {
+	background-color: #efeeee;
+	-moz-border-radius: 4px; /* FF1+ */
+	-webkit-border-radius: 4px; /* Saf3+, Chrome */
+	-khtml-border-radius: 4px; /* Konqueror */
+	border-radius: 4px; /* Standard. IE9 */
+	border: 1px solid #ccc;
+	display: block;
+	height: 95px;
+	padding: 5px;
+	width: 150px;
+}
+.cfct-image-select-items-list-item > div {
+	position: relative;
+}
+.cfct-image-select-items-list ul .cfct-image-select-items-list-item {
+	cursor: pointer;
+	margin: 5px 0 0 5px;
+}
+.cfct-image-select-items-list-item.cfct-image-select-items-no-image > div {
+	background: #d2cfcf url(../img/no-image.png) 0 0 no-repeat;
+}
+.cfct-image-select-items-list.cfct-image-select-items-list-horizontal ul .cfct-image-select-items-list-item {
+	display: -moz-inline-box; /* FF2 */
+	display: inline-block; /* Standard. IE8+, Saf, FF3+ */
+	/**
+	 * @bugfix inline-block fix
+	 * @see http://blog.mozilla.com/webdev/2009/02/20/cross-browser-inline-block/
+	 * @valid no
+	 */
+	zoom: 1;
+	*display: inline;
+}
+.cfct-image-select-items-list.cfct-image-select-items-list-vertical ul .cfct-image-select-items-list-item {
+	display: block;
+}
+
+.cfct-image-select-items-list-item.featured {
+	background: #ddd;
+	border-color: #999;
+}
+.cfct-image-select-items-list-item.featured .featured-icon {
+	padding-right: 4px;
+}
+.cfct-image-select-items-list-item.active {
+	background: #333;
+	border-color: #333;
+	cursor: default;
+}
+.cfct-image-select-items-list-item div {
+	width: 150px;
+	height: 95px;
+	margin: 0;
+	display: block;
+}
+.cfct-image-select-items-list-item .cfct-image-list-item-title {
+	background: transparent url(../img/70-percent-trans-bg.png);
+	bottom: 0;
+	color: white;
+	font-size: .8em;
+	height: 15px;
+	left: 0;
+	overflow: hidden;
+	padding: 5px;
+	position: absolute;
+	-o-text-overflow: ellipsis; /* Opera */
+	text-overflow: ellipsis; /* IE6+, Safari, Konqueror, Standard? */
+	white-space: nowrap;
+	width: 140px;
+}
+.cfct-image-select-no-images {
+	color: #555;
+	margin-bottom: 10px;
+	padding: 20px 0;
+	text-align: center;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, .7);
+}
+.cfct-image-select-note {
+	margin-bottom: 0;
+	font-weight: bold;
+	margin-left: 6px;
+}
+.cfct-image-select-size {
+	margin: 5px 0;
+}
+.cfct-image-select-size label {
+	display: block;
+	width: 100px;
+	float: left;
+	line-height: 30px;
+}
+.cfct-image-select-size select {
+	float: left;
+	width: 200px;
+}
+.cfct-image-scroller-group {
+	margin:5px 1px 1px;
+}
+
+/* global search tweaks */
+.cfct-image-select-b input.cfct-global-image-search-field {
+	width: 752px;
+}
+.cfct-image-select-b .cfct-image-select-items-list-b {
+	width: 580px;
+}
+.cfct-image-select-b .cfct-image-select-current-image {
+	float: left;
+	width: 165px;
+	height: 130px;
+	padding: 0;
+	border: 0;
+	background: none;
+}
+.cfct-image-select-b .cfct-image-select-current-image p {
+	text-align:center;
+	color:#666;
+	font-size:0.8em;
+	margin:3px 0 0 0;
+}
+.cfct-image-select-b .cfct-image-select-items-list-b .cfct-loading {
+	margin: 50px 0 0 230px;
+	height: 18px;
+	padding-left: 25px;
+	background: transparent url(../img/ajax-loader-light.gif) 0 50% no-repeat;
+	color: gray;
+}
+
+/* =Module Tabs
+========================= */
+.cfct-module-tabs {
+	margin:-12px 0 22px 0;
+	position:relative;
+	text-align:center;
+	height:28px;
+	border-bottom:1px solid #b0b0b0;
+	padding-top: 12px;
+}
+.cfct-module-tabs ul {
+	display:-moz-inline-box; /* FF2 */
+	display:inline-block; /* Standard. IE8+, Saf, FF3+ */
+	margin: 0;
+	padding: 0;
+	/**
+	 * @bugfix inline-block fix
+	 * @see http://blog.mozilla.com/webdev/2009/02/20/cross-browser-inline-block/
+	 * @valid no
+	 */
+	zoom:1;
+	*display:inline;
+}
+.cfct-module-tabs li {
+	float:left;
+	margin:0 2px 0 0;
+}
+.cfct-module-tabs li a {
+	color:#555;
+	display:block;
+	font-weight:bold;
+	line-height:17px;
+	padding:5px 8px;
+	text-shadow:0 1px 0 rgba(255, 255, 255, .7);
+	text-decoration:none !important;
+	background:#d2cfcf;
+	border:1px solid #b0b0b0;
+	-moz-border-radius-topleft:5px; /* FF1+ */
+	-webkit-border-top-left-radius:5px; /* Saf3+, Chrome */
+	-khtml-border-top-left-radius:5px; /* Konqueror */
+	border-top-left-radius:5px; /* Standard. IE9 */
+	-moz-border-radius-topright:5px; /* FF1+ */
+	-webkit-border-top-right-radius:5px; /* Saf3+, Chrome */
+	-khtml-border-top-right-radius:5px; /* Konqueror */
+	border-top-right-radius:5px; /* Standard. IE9 */
+}
+.cfct-module-tabs li a:hover {
+	background-position:0 -100px;
+	background-color:#b4b4b4;
+}
+.cfct-module-tabs li.active a {
+	color: #333;
+	background-color: #e5e5e5;
+	border-bottom:1px solid #e5e5e5;
+}
+.cfct-module-tab-contents>div {
+	display:none;
+}
+.cfct-module-tab-contents>div.active {
+	display:block;
+}
+
+/* =Post Layout Controls
+========================= */
+.cfct-post-layout-controls p {
+	height: 25px;
+	line-height: 25px;
+	margin: 0 0 1em 0;
+}
+.cfct-post-layout-controls label {
+	margin-right: 0;
+}
+.cfct-post-layout-controls select {
+	width: 150px;
+}
+.cfct-post-layout-controls p>label {
+	width: 120px;
+	display: block;
+	float: left;
+}
+.cfct-post-layout-controls p.customize {
+	margin-top: 2em;
+}
+.cfct-post-layout-controls p.customize>label {
+	float: none;
+	display: inline;
+}
+.cfct-post-preview-content.cfct-image-left .cfct-post-preview-thumbnail {
+	float: left;
+	margin: 0 0 5px 5px;
+}
+.cfct-post-preview-content.cfct-image-right .cfct-post-preview-thumbnail {
+	margin: 0 5px 5px 0;
+	float: right;
+}
+.cfct-post-preview-content.cfct-image-center .cfct-post-preview-thumbnail {
+	display: block;
+	width: 100%;
+}
+.cfct-post-preview-content.cfct-image-center .cfct-post-preview-thumbnail img {
+	margin: 5px auto 5px;
+}

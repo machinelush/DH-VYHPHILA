@@ -1,0 +1,43 @@
+/**
+ * @bugfix inline-block fix
+ * @see http://blog.mozilla.com/webdev/2009/02/20/cross-browser-inline-block/
+ * @valid no
+ */
+#header .searchform div {
+	zoom: 1;
+	*display: inline;
+}
+
+/**
+ * @bugfix hasLayout fixes
+ * @see http://www.satzansatz.de/cssd/onhavinglayout.html
+ * @valid no
+ */
+.pagination,
+.widget,
+.notice,
+#footer-sub {
+	zoom: 1;
+}
+
+/**
+ * IE doesn't take kindly to dropdowns without fixed widths. We'll fix it for IE.
+ */
+nav.nav li ul {
+	/* Min width here fixes strange PIE bug. */
+	min-width: 100%;
+	width: 200px;
+}
+
+/**
+ * Text-indent workaround for IE
+ */
+#header .searchform .searchsubmit, 
+#cf-logo {
+	text-indent: 0;
+}
+
+/* Fixes 60px of padding on right */
+.c4-1234 .cfct-module-carousel {
+	width: 918px;
+}

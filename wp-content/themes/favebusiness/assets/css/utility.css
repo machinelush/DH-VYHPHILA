@@ -1,0 +1,318 @@
+/* --------------------------------------------------
+ * Standard / Utility Classes
+-------------------------------------------------- */
+
+/** @section WordPress compatibility styles
+ * Styles for these classes should be included with every theme.
+ --------------------------------------------------------------- */
+
+.alignleft,
+.alignright {
+	margin-top: 4px;
+}
+.alignleft {
+	float: left;
+	margin-right: 15px;
+	margin-bottom: 10px;
+}
+.alignright {
+	float: right;
+	margin-left: 15px;
+	margin-bottom: 10px;
+}
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/**
+ * Captioned images
+ * Caption shortcode filtered.
+ */
+.wp-caption {
+	background-color: #e3e3e3;
+	-moz-border-radius: 3px; /* FF1+ */
+	-webkit-border-radius: 3px; /* Saf3+, Chrome */
+	-khtml-border-radius: 3px; /* Konqueror */
+	border-radius: 3px; /* Standard. IE9 */
+	overflow: hidden;
+	padding: 5px;
+	position: relative;
+}
+.wp-caption img {
+	display: block;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+.wp-caption .wp-caption-text {
+	margin: 6px 2px 0 2px;
+}
+
+/**
+ * Visually hidden, but available to screenreaders
+ */
+.accessibility {
+	left: -32000px;
+	position: absolute;
+}
+
+/** @section clearing
+---------------------- */
+
+/* Clearing floats without extra markup [http: //www.positioniseverything.net/easyclearing.html] */
+.clearfix {
+	display: block;
+	zoom: 1;
+}
+.clearfix:after {
+	content: " ";
+	display: block;
+	font-size: 0;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.clear {
+	clear: both;
+	float: none;
+	height: 1px;
+}
+
+/** @section Titles
+ -------------------------------------------------- */
+.site-title {
+	font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+.section-title {
+	border-bottom: 1px dotted #999;
+	font-weight: normal;
+	margin-bottom: 12px;
+	padding-bottom: 3px;
+}
+
+/** @subsection type treatments
+-------------------------------*/
+.typ-intro {
+	font-size: 1.2em;
+	line-height: 1.6em;
+	margin-bottom: 1em;
+}
+.typ-caps {
+	font-size: 0.9em;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+.typ-quiet,
+a.typ-quiet {
+	color: #999;
+}
+
+/** @section Pagination
+ -------------------------------------------------- */
+/**
+ * Uses lte-ie7.css for zoom clearing
+ */
+.pagination,
+.pagination-content {
+	clear: both;
+	font-size: 10px;
+	font-weight: bold;
+	line-height: 18px;
+	margin: 8px 0;
+	text-transform: uppercase;
+}
+.pagination {
+	border-top: 1px dotted #ccc;
+	margin: 16px auto;
+	overflow: hidden;
+	padding-top: 14px;
+}
+.entry-footer .pagination {
+	margin-left: 120px;
+	margin-right: 120px;
+	margin-bottom: 0;
+}
+.pagination a {
+	display: -moz-inline-box; /* FF2 */
+	display: inline-block; /* Standard. IE8+, Saf, FF3+ */
+	padding: 0 3px;
+}
+.pagination a.next,
+.pagination a.prev {
+	padding: 0;
+}
+.pagination a.next {
+	float: right;
+}
+.pagination a.prev {
+	float: left;
+}
+.pagination p {
+	color: #999;
+	margin: 0;
+	text-align: center;
+}
+.pagination-content {
+	
+}
+
+/**
+ * @section Buttons
+ * <a class="btn"> or <input class="btn">
+ -------------------------------------------------- */
+.btn,
+input#submit {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	cursor:pointer;
+	display: -moz-inline-box;
+	display: inline-block;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: normal;
+	outline: none;
+	padding: 5px 16px;
+	text-decoration: none !important;
+	vertical-align: middle;
+}
+/* button style a */
+.btn-a {
+	color: #006699;
+	background: #d8d8d8;
+	background: -webkit-gradient(linear, left top, left bottom, from(#e3e3e3), to(#cccccc));
+	background: -moz-linear-gradient(top,  #e3e3e3,  #cccccc);
+	-pie-background: linear-gradient(#e3e3e3, #cccccc);
+	text-shadow: #fff 0 1px 1px;
+}
+.btn-a:hover {
+	background: #d8d8d8;
+	background: -webkit-gradient(linear, left top, left bottom, from(#dddddd), to(#cccccc));
+	background: -moz-linear-gradient(top,  #dddddd,  #cccccc);
+	-pie-background: linear-gradient(#dddddd, #cccccc);
+	border: 1px solid #003366;
+}
+.btn-a:active {
+	background: #cccccc;
+	background: -webkit-gradient(linear, left top, left bottom, from(#999999), to(#cccccc));
+	background: -moz-linear-gradient(top,  #999999,  #cccccc);
+	-pie-background: linear-gradient(#999999, #cccccc);
+}
+/* button style b */
+.btn-b,
+input#submit {
+	color: #fff !important;
+	background: #005d8e;
+	background: -webkit-gradient(linear, left top, left bottom, from(#006699), to(#00497b));
+	background: -moz-linear-gradient(top,  #006699,  #00497b);
+	-pie-background: linear-gradient(#006699, #00497b);
+	border: 1px solid #003366;
+	text-shadow: #000033 0 -1px 0;
+}
+.btn-b:hover,
+input#submit:hover {
+	color: #fff;
+	background: #005d8e;
+	background: -webkit-gradient(linear, left top, left bottom, from(#00497b), to(#003366));
+	background: -moz-linear-gradient(top,  #00497b,  #003366);
+	-pie-background: linear-gradient(#00497b, #003366);
+	border: 1px solid #000033;
+}
+.btn-b:active,
+input#submit:active {
+	background: #cccccc;
+	background: -webkit-gradient(linear, left top, left bottom, from(#001f49), to(#003366));
+	background: -moz-linear-gradient(top,  #001f49,  #003366);
+	-pie-background: linear-gradient(#001f49, #003366);
+}
+
+/**
+ * Edit links
+ */
+a.post-edit-link {
+	background: url(../img/edit.png) no-repeat 0 0;
+	display: none;
+	font-size: 0;
+	/* Line-height Workaround for IE not being able to use text-indent. */
+	line-height: 0;
+	overflow: hidden;
+	vertical-align: middle;
+	height: 20px;
+	width: 20px;
+	text-indent: -32000px;
+	z-index: 10;
+}
+/**
+ * Edit link for pages (in masthead)
+ */
+#masthead a.post-edit-link {
+	position: absolute;
+	right: 15px;
+	top: 15px;
+}
+#main-content:hover #masthead a.post-edit-link {
+	display: block;
+}
+#main-content .entry a.post-edit-link {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+#main-content .entry:hover > a.post-edit-link {
+	display: block;
+}
+
+/**
+ * Excerpt List
+ */
+.excerpt-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.excerpt-list li {
+	margin: 0 0 10px 0;
+}
+.excerpt-list .el-title {
+	margin: 0;
+}
+.excerpt-list .el-meta {
+	font-size: 11px;
+	line-height: 14px;
+	color: #999;
+	margin-top: 0;
+}
+.excerpt-list p {
+	margin: 3px 0 0 0;
+}
+
+/**
+ * Gallery 
+ */
+body #main-content .gallery {
+	margin: auto;
+}
+body #main-content .gallery .attachment-thumbnail {
+	border-color: #e3e3e3;
+	border-width: 5px;
+	border-style: solid;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+body #main-content .gallery .attachment-thumbnail:hover {
+	border-color: #c4c4c4;
+}
+body #main-content .gallery .gallery-caption {
+	color: #888;
+}
+body #main-content .content .gallery dl {
+	margin: 0;
+}
+body #main-content .content .gallery br+br {
+	display: none;
+}
