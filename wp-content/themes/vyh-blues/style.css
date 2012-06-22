@@ -4,7 +4,7 @@
   Template: favebusiness
   Description: Child Theme of FaveBusiness  customized by Shaun Michel for Valley Youth House
   Version: 0.1
-  Author: Shaun Michel
+  Author: machinelush
   Author URI: http://crowdfavorite.com/
 */
 
@@ -27,6 +27,11 @@
  * It's standard to use the css/ dir for actual theme CSS in a Carrington-based theme.
 */
 
+/* Colors Used
+ * VYH Dark Blue = #0065A4
+ * VYH Light Blue = 
+*/
+
 @import url("../favebusiness/style.css");
 html {
     background-color: #0065A4;
@@ -35,6 +40,42 @@ body {
     background-color: #0065A4;
     border-top: 1px solid #494949;
 }
+/* positions search above logo/banner graphic */
+#header {
+	margin: 8px 0 3px 0;
+}
+#header .str-container {
+	padding-top: 31px;
+}
+#header .searchform {
+	top: 0;
+	right: 0;
+}
+/* replace the site title with a full width logo/banner graphic */
+#header .site-title {
+	background: #0065A4 url(img/my-logo.png) 0 0 no-repeat; /*enter the proper file name for you logo graphic*/
+	height: 50px; /*enter the height of your logo graphic*/
+	width: 100%; /*= 992px, the full width of the content area*/
+	text-indent: -999em; /*hides the site title text*/
+	display: block;
+	margin: 0 0 12px 0;
+}
+nav .nav-main .nav {  /* CHECK THIS SELECTOR */
+	line-height: 30px;
+	font-weight: bold;
+	background-color: #ffffff;
+}
+section #main {
+
+}
+#main-content {
+	border-radius: 4px 4px 0 0;
+	border: transparent;
+}
+.str-container {
+	padding-top: 3px;
+}
 #footer {
     background-color: #0065A4;
 }
+
