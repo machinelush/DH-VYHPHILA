@@ -1,0 +1,40 @@
+/* 
+  Theme Name: VYH-Blues
+  Theme URI: vyhphila.org 
+  Template: favebusiness
+  Description: Child Theme of FaveBusiness  customized by Shaun Michel for Valley Youth House
+  Version: 0.1
+  Author: Shaun Michel
+  Author URI: http://crowdfavorite.com/
+*/
+
+/* License: GNU General Public License
+ * License URI: http://wordpress.org/about/gpl/
+ * Tags: customizable, template, framework, carrington, cms, business, carrington-build, blue, one-column, two-columns, three-columns, fixed-width, editor-style, threaded-comments, microformats
+ *
+ * @package favebusiness
+ *
+ * Copyright (c) 2008-2012 Valley Youth House, Inc. All rights reserved.
+ * vyhphila.org
+ *
+ * **********************************************************************
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+ * **********************************************************************
+ *
+ * NOTE - This file is not used: it's only here because WordPress expects it to be in a theme.
+ * It's standard to use the css/ dir for actual theme CSS in a Carrington-based theme.
+*/
+
+@import url("../favebusiness/style.css");
+html {
+    background-color: #0065A4;
+}
+body {
+    background-color: #0065A4;
+    border-top: 1px solid #494949;
+}
+#footer {
+    background-color: #0065A4;
+}
