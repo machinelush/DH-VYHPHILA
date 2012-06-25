@@ -45,16 +45,16 @@ body {
 	margin: 8px 0 3px 0;
 }
 #header .str-container {
-	padding-top: 31px;
+	padding-top: 5px;
 }
 #header .searchform {
-	top: 0;
+	top: 60px;
 	right: 0;
 }
 /* replace the site title with a full width logo/banner graphic */
 #header .site-title {
 	background: #0065A4 url(graphics/VYH_GP_Logo.png) 0 0 no-repeat; /*enter the proper file name for you logo graphic*/
-	height: 50px; /*enter the height of your logo graphic*/
+	height: 100px; /*enter the height of your logo graphic*/
 	width: 100%; /*= 992px, the full width of the content area*/
 	text-indent: -999em; /*hides the site title text*/
 	display: block;
