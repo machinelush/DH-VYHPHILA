@@ -40,7 +40,7 @@ body {
     background-color: #0065A4;
     border-top: 1px solid #494949;
 }
-.cfct-mod-title {
+.cfct-mod-title, .widget-title{
 	color: #0065A4;
 	border-bottom: 3px solid #0065A4;
 }
