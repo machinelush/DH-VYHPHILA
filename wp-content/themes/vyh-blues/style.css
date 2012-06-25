@@ -76,6 +76,7 @@ section #main {
 }
 #main-content {
 	border: transparent;
+	background-color:#0065A4;
 }
 .str-container {
 	padding-top: 3px;
