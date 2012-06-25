@@ -23,8 +23,6 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
  * **********************************************************************
  *
- * NOTE - This file is not used: it's only here because WordPress expects it to be in a theme.
- * It's standard to use the css/ dir for actual theme CSS in a Carrington-based theme.
 */
 
 /* Colors Used
@@ -78,9 +76,12 @@ section #main {
 	border: transparent;
 	background-color:#0065A4;
 }
+#main-content .str-container {
+	background-color: #0065A4;
+}
+
 .str-container {
 	padding-top: 3px;
-	background-color:#0065A4;
 }
 #footer {
     background-color: #0065A4;
