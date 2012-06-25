@@ -46,7 +46,8 @@ body {
 }
 /* positions search above logo/banner graphic */
 #header {
-	margin: 3px 0 3px 0;
+	margin: 1px 0 2px 0;
+
 }
 #header .str-container {
 	padding-top: 5px;
@@ -74,7 +75,6 @@ section #main {
 
 }
 #main-content {
-	border-radius: 2px 2px 0 0;
 	border: transparent;
 }
 .str-container {
@@ -83,4 +83,8 @@ section #main {
 #footer {
     background-color: #0065A4;
 }
-
+#footer-content {
+	background-color: #0065A4;
+	border-width: 1px;
+	border-color: transparent;
+}
