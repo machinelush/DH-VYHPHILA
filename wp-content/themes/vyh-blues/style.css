@@ -83,7 +83,7 @@ section #main {
 #footer {
     background-color: #0065A4;
 }
-#footer-content {
+#footer .str-content {
 	background-color: #0065A4;
 	border-width: 1px;
 	border-color: transparent;
