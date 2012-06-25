@@ -72,7 +72,7 @@ nav.nav-main, nav.nav-featured {  /* CHECK THIS SELECTOR */
 	border-radius: 4px 4px 0 0;
 }
 section #main {
-
+	background-color: #0065A4;
 }
 #main-content {
 	border: transparent;
