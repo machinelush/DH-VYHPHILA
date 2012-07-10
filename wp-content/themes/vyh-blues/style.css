@@ -61,7 +61,7 @@ body {
 	width: 100%; /*= 992px, the full width of the content area*/
 	text-indent: -999em; /*hides the site title text*/
 	display: block;
-	margin: 0 0 12px 0;
+	margin: 0 0 8px 0;
 }
 nav.nav-main, nav.nav-featured {  /* CHECK THIS SELECTOR */
 	line-height: 30px;
@@ -79,6 +79,9 @@ section #main {
 }
 .str-content {
 	padding-top: 5px;
+
+#main-content .str-content {
+	border-radius:0;
 }
 .str-container {
 	padding-top: 3px;
