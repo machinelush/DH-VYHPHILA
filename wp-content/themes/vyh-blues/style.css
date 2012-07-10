@@ -5,7 +5,7 @@
   Description: Child Theme of FaveBusiness  customized by Shaun Michel for Valley Youth House
   Version: 0.1
   Author: machinelush
-  Author URI: http://crowdfavorite.com/
+  Author URI: http://moorchel.net/
 */
 
 /* License: GNU General Public License
@@ -75,11 +75,11 @@ section #main {
 #main-content {
 	border: transparent;
 	background-color:#0065A4;
+	border-radius: 0;
 }
-#main-content .str-content {
-	background-color: #0065A4;
+.str-content {
+	padding-top: 5px;
 }
-
 .str-container {
 	padding-top: 3px;
 }
