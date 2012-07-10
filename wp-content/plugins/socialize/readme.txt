@@ -3,8 +3,8 @@ Contributors: JonBishop
 Donate link: http://www.jonbishop.com/donate/
 Tags:  socialize, bookmark, post, posts, admin, page, digg, facebook, twitter, pinterest, buffer, bufferapp, delicious, digg, seo, button, google, sharing, stumbleupon, posting, saving, sharethis, share, bookmarking, shareaholic, bookmarks menu, social, social bookmarking, reddit, sexybookmarks, mu, sphinn, dzone, meta, linkedin, + one, +1, plus 1, plus one, addthis, addtoany, google plus, buddypress
 Requires at least: 2.7
-Tested up to: 3.4
-Stable tag: 2.1
+Tested up to: 3.4.1
+Stable tag: 2.1.1
 
 Provides an easy way to selectively add actionable social bookmarks to your posts content or below the post in a 'Call To Action' box.
 
@@ -78,9 +78,12 @@ Because you can only display as many buttons that will fit within the width of t
 
 == Changelog ==
 
-The current version is 2.1 (2012.06.16)
+The current version is 2.1.1 (2012.06.28)
 
-= 2.1 (2012.06.16)=
+= 2.1.1 (2012.06.28) =
+* Fixed Pinterest and Buffer code
+
+= 2.1 (2012.06.16) =
 * Added Pinterest
 * Removed Google Buzz
 * Changed location of settings and switched to tabbed navigation

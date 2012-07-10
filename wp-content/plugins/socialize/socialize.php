@@ -4,7 +4,7 @@
   Plugin Name: Socialize
   Plugin URI: http://www.jonbishop.com/downloads/wordpress-plugins/socialize/
   Description: Adds actionable social bookmarking buttons to your site
-  Version: 2.1
+  Version: 2.1.1
   Author: Jon Bishop
   Author URI: http://www.jonbishop.com
   License: GPL2
@@ -67,7 +67,7 @@ class socializeWP {
         if (!is_array($tmp)) {
             $tmp = array(
                 "socialize_installed" => "on",
-                "socialize_version" => "24",
+                "socialize_version" => "25",
                 "socialize_alert_bg" => "#FFEAA8",
                 "socialize_alert_border_size" => "2px",
                 "socialize_alert_border_style" => "solid",
