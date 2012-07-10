@@ -82,12 +82,17 @@ section #main {
 }
 #main-content .str-content {
 	border-radius:0;
+	padding-top:5px;
 }
 .str-container {
 	padding-top: 3px;
 }
 #footer {
     background-color: #0065A4;
+}
+#footer-content {
+	border-color:#0065A4
+	border-radius: 0;
 }
 #footer .str-content {
 	background-color: #0065A4;
